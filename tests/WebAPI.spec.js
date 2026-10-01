@@ -1,3 +1,14 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+  const page1Promise = page.waitForEvent('popup');
+  await page.getByRole('link', { name: 'Open Tab' }).click();
+  const page1 = await page1Promise;
+  await page.getByRole('cell', { name: '33' }).click();
+});
+
+
 const { test, expect, request } = require('@playwright/test');
 const { APiUtils } = require('./utils/APiUtils');
 const loginPayLoad = { userEmail: "anshika@gmail.com", userPassword: "Iamking@000" };

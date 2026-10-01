@@ -16,8 +16,8 @@ import { report } from 'node:process';
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = ({
-  testDir: './tests',
-  //testDir: './tests/Practice',
+  //testDir: './tests',
+  testDir: './tests/Practice',
   timeout: 30 * 1000,
   expect:
   {

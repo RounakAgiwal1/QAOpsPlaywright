@@ -1,0 +1,2250 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: amazon.spec.js >> amazon product
+- Location: tests\Practice\amazon.spec.js:3:6
+
+# Error details
+
+```
+TimeoutError: locator.click: Timeout 10000ms exceeded.
+Call log:
+  - waiting for locator('div.puisg-col-inner').filter({ hasText: 'SanDisk Mobile Pen Drive Luxe 128GB, USB Type A & USB C Connector, Up to 400MB/s R, Silver' }).getByRole('button', { name: 'Add to cart' })
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f2e2]:
+  - navigation "Shortcuts menu" [ref=f2e3]:
+    - heading "Skip to" [level=2] [ref=f2e4]
+    - list "Skip to" [ref=f2e5]:
+      - listitem [ref=f2e6]:
+        - link "main content" [ref=f2e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+      - listitem [ref=f2e8]:
+        - link "Results" [ref=f2e9] [cursor=pointer]:
+          - /url: .s-asin a:has(h2)
+    - separator [ref=f2e10]
+    - heading "Keyboard shortcuts" [level=2] [ref=f2e11]
+    - list "Keyboard shortcuts" [ref=f2e12]:
+      - listitem [ref=f2e13]:
+        - link "Search, alt, forward slash" [ref=f2e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=f2e15]:
+            - generic [ref=f2e16]: Search
+            - generic [ref=f2e17]:
+              - generic [ref=f2e18]: alt
+              - generic [ref=f2e19]: +
+              - generic [ref=f2e20]: /
+      - listitem [ref=f2e21]:
+        - link "Cart, shift, alt, c" [ref=f2e22] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=f2e23]:
+            - generic [ref=f2e24]: Cart
+            - generic [ref=f2e25]:
+              - generic [ref=f2e26]: shift
+              - generic [ref=f2e27]: +
+              - generic [ref=f2e28]: alt
+              - generic [ref=f2e29]: +
+              - generic [ref=f2e30]: C
+      - listitem [ref=f2e31]:
+        - link "Home, shift, alt, h" [ref=f2e32] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=f2e33]:
+            - generic [ref=f2e34]: Home
+            - generic [ref=f2e35]:
+              - generic [ref=f2e36]: shift
+              - generic [ref=f2e37]: +
+              - generic [ref=f2e38]: alt
+              - generic [ref=f2e39]: +
+              - generic [ref=f2e40]: H
+      - listitem [ref=f2e41]:
+        - link "Your orders, shift, alt, o" [ref=f2e42] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=f2e43]:
+            - generic [ref=f2e44]: Orders
+            - generic [ref=f2e45]:
+              - generic [ref=f2e46]: shift
+              - generic [ref=f2e47]: +
+              - generic [ref=f2e48]: alt
+              - generic [ref=f2e49]: +
+              - generic [ref=f2e50]: O
+      - listitem [ref=f2e51]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=f2e52] [cursor=pointer]:
+          - generic [ref=f2e53]:
+            - generic [ref=f2e54]: Show/Hide shortcuts
+            - generic [ref=f2e55]:
+              - generic [ref=f2e56]: shift
+              - generic [ref=f2e57]: +
+              - generic [ref=f2e58]: alt
+              - generic [ref=f2e59]: +
+              - generic [ref=f2e60]: Z
+    - generic [ref=f2e61]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=f2e67]:
+    - navigation "Primary" [ref=f2e68]:
+      - generic [ref=f2e69]:
+        - generic [ref=f2e70]:
+          - link "Amazon.in" [ref=f2e72] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .in
+          - button "Delivering to Gwalior 474011 Update location" [ref=f2e75] [cursor=pointer]:
+            - generic [ref=f2e77]:
+              - generic [ref=f2e78]: Delivering to Gwalior 474011
+              - generic [ref=f2e79]: Update location
+        - search [ref=f2e82]:
+          - generic [ref=f2e85]:
+            - generic [ref=f2e86]: All
+            - combobox "Select the department you want to search in" [ref=f2e89] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Devices"
+              - option "Amazon Fashion"
+              - option "Amazon Fresh"
+              - option "Amazon Pharmacy"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Audible Audiobooks"
+              - option "Baby"
+              - option "Beauty"
+              - option "Books"
+              - option "Car & Motorbike"
+              - option "Clothing & Accessories"
+              - option "Collectibles"
+              - option "Computers & Accessories"
+              - option "Deals"
+              - option "Electronics"
+              - option "Furniture"
+              - option "Garden & Outdoors"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Foods"
+              - option "Health & Personal Care"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Jewellery"
+              - option "Kindle Store"
+              - option "Luggage & Bags"
+              - option "Luxury Beauty"
+              - option "Movies & TV Shows"
+              - option "MP3 Music"
+              - option "Music"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Prime Video"
+              - option "Shoes & Handbags"
+              - option "Software"
+              - option "Sports, Fitness & Outdoors"
+              - option "Subscribe & Save"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under ₹500"
+              - option "Video Games"
+              - option "Watches"
+          - searchbox "Search Amazon.in" [ref=f2e92]: Pen Drive
+          - generic "Go" [ref=f2e95] [cursor=pointer]:
+            - button "Go" [ref=f2e96]
+        - generic [ref=f2e98]:
+          - generic [ref=f2e99]:
+            - link "Choose a language for shopping in Amazon India. The current selection is English (EN)." [ref=f2e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=f2e103]:
+                - img "India" [ref=f2e104]
+                - generic [ref=f2e105]: EN
+            - button "Expand to Change Language or Country" [ref=f2e106] [cursor=pointer]
+          - generic [ref=f2e107]:
+            - link "Hello, sign in Account & Lists" [ref=f2e108] [cursor=pointer]:
+              - /url: https://www.amazon.in/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.in%2Fs%3Fk%3DPen%2BDrive%26ref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+              - generic [ref=f2e109]: Hello, sign in
+              - generic [ref=f2e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=f2e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=f2e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=f2e114]: Returns
+            - generic [ref=f2e115]: "& Orders"
+          - link "0 items in cart" [ref=f2e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=f2e117]: "0"
+            - generic [ref=f2e120]: Cart
+      - generic [ref=f2e122]:
+        - button "Open All Categories Menu" [ref=f2e124] [cursor=pointer]:
+          - generic [ref=f2e126]: All
+        - list [ref=f2e130]:
+          - listitem [ref=f2e131]:
+            - link "Amazon Pay" [ref=f2e133] [cursor=pointer]:
+              - /url: /gp/sva/dashboard?ref_=nav_cs_apay
+          - listitem [ref=f2e134]:
+            - link "Mobiles" [ref=f2e136] [cursor=pointer]:
+              - /url: /mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles
+          - listitem [ref=f2e137]:
+            - link "Today's Deals" [ref=f2e139] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=f2e140]:
+            - link "Coupons" [ref=f2e142] [cursor=pointer]:
+              - /url: /coupons?ref_=nav_cs_coupons
+          - listitem [ref=f2e143]:
+            - link "Flights" [ref=f2e145] [cursor=pointer]:
+              - /url: /flights?ref_=nav_cs_apay_desktop_topnav_flights
+          - listitem [ref=f2e146]:
+            - link "Electronics" [ref=f2e148] [cursor=pointer]:
+              - /url: /electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics
+          - listitem [ref=f2e149]:
+            - link "Computers" [ref=f2e151] [cursor=pointer]:
+              - /url: /computers-and-accessories/b/?ie=UTF8&node=976392031&ref_=nav_cs_pc
+          - listitem [ref=f2e152]:
+            - link "New Releases" [ref=f2e154] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=f2e155]:
+            - link "Bestsellers" [ref=f2e157] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=f2e158]:
+            - link "Video Games" [ref=f2e160] [cursor=pointer]:
+              - /url: /video-games/b/?ie=UTF8&node=976460031&ref_=nav_cs_video_games
+          - listitem [ref=f2e161]:
+            - link "Fashion" [ref=f2e163] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6648217031&ref_=nav_cs_fashion
+          - listitem [ref=f2e164]:
+            - link "Home & Kitchen" [ref=f2e166] [cursor=pointer]:
+              - /url: /Home-Kitchen/b/?ie=UTF8&node=976442031&ref_=nav_cs_home
+          - listitem [ref=f2e167]:
+            - link "Fresh" [ref=f2e169] [cursor=pointer]:
+              - /url: /fresh?ref_=nav_cs_fresh
+          - listitem [ref=f2e170]:
+            - link "Grocery & Gourmet Foods" [ref=f2e172] [cursor=pointer]:
+              - /url: /Gourmet-Specialty-Foods/b/?ie=UTF8&node=2454178031&ref_=nav_cs_grocery
+          - listitem [ref=f2e173]:
+            - link "Baby" [ref=f2e175] [cursor=pointer]:
+              - /url: /Baby/b/?ie=UTF8&node=1571274031&ref_=nav_cs_baby
+          - listitem [ref=f2e176]:
+            - link "Books" [ref=f2e178] [cursor=pointer]:
+              - /url: /Books/b/?ie=UTF8&node=976389031&ref_=nav_cs_books
+          - listitem [ref=f2e179]:
+            - link "Kindle eBooks" [ref=f2e181] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=1634753031&ref_=nav_cs_kindle_books
+          - listitem [ref=f2e182]:
+            - link "Sports, Fitness & Outdoors" [ref=f2e184] [cursor=pointer]:
+              - /url: /Sports/b/?ie=UTF8&node=1984443031&ref_=nav_cs_sports
+          - listitem [ref=f2e185]:
+            - link "Toys & Games" [ref=f2e187] [cursor=pointer]:
+              - /url: /Toys-Games/b/?ie=UTF8&node=1350380031&ref_=nav_cs_toys
+          - listitem [ref=f2e188]:
+            - link "Car & Motorbike" [ref=f2e190] [cursor=pointer]:
+              - /url: /Car-Motorbike-Store/b/?ie=UTF8&node=4772060031&ref_=nav_cs_automotive
+          - listitem [ref=f2e191]:
+            - link "Beauty & Personal Care" [ref=f2e193] [cursor=pointer]:
+              - /url: /beauty/b/?ie=UTF8&node=1355016031&ref_=nav_cs_beauty
+          - listitem [ref=f2e194]:
+            - link "Customer Service" [ref=f2e196] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help
+          - listitem [ref=f2e197]:
+            - link "Pet Supplies" [ref=f2e199] [cursor=pointer]:
+              - /url: /Pet-Supplies/b/?ie=UTF8&node=2454181031&ref_=nav_cs_pets
+          - listitem [ref=f2e200]:
+            - link "Custom Products" [ref=f2e202] [cursor=pointer]:
+              - /url: /Amazon-Custom/b/?ie=UTF8&node=32615889031&ref_=nav_cs_custom
+          - listitem [ref=f2e203]:
+            - link "Gift Cards" [ref=f2e205] [cursor=pointer]:
+              - /url: /gift-card-store/b/?ie=UTF8&node=3704982031&ref_=nav_cs_gc
+          - listitem [ref=f2e206]:
+            - link "Home Improvement" [ref=f2e208] [cursor=pointer]:
+              - /url: /Home-Improvement/b/?ie=UTF8&node=4286640031&ref_=nav_cs_hi
+          - listitem [ref=f2e209]:
+            - generic [ref=f2e210]:
+              - link "Prime" [ref=f2e211] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=f2e212] [cursor=pointer]
+          - listitem [ref=f2e213]:
+            - link "AmazonBasics" [ref=f2e215] [cursor=pointer]:
+              - /url: /b/?node=6637738031&ref_=nav_cs_amazonbasics
+          - listitem [ref=f2e216]:
+            - link "Audible" [ref=f2e218] [cursor=pointer]:
+              - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=17941593031&ref_=nav_cs_audible
+          - listitem [ref=f2e219]:
+            - link "Health, Household & Personal Care" [ref=f2e221] [cursor=pointer]:
+              - /url: /health-and-personal-care/b/?ie=UTF8&node=1350384031&ref_=nav_cs_hpc
+        - link "Jan26_Event" [ref=f2e225] [cursor=pointer]:
+          - /url: /events/greatindianfestival/3/?_encoding=UTF8&ref_=nav_swm_event&pf_rd_p=aae09ce7-f0d7-40bd-9785-222a352c189d&pf_rd_s=nav-sitewide-msg&pf_rd_t=4201&pf_rd_i=navbar-4201&pf_rd_m=A21TJRUUN4KGV&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0
+          - img "Jan26_Event" [ref=f2e226]
+      - dialog [ref=f2e227]
+  - generic [ref=f2e229]:
+    - heading [level=1] [ref=f2e232]:
+      - generic [ref=f2e233]:
+        - heading "1-16 of over 20,000 results for \"Pen Drive\"" [level=2] [ref=f2e238]
+        - generic [ref=f2e243]:
+          - generic [ref=f2e244]: "Sort by:"
+          - combobox "Sort by:" [ref=f2e245]:
+            - option "Featured" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - option "Avg. Customer Review"
+            - option "Newest Arrivals"
+            - option "Best Sellers"
+          - generic [ref=f2e246] [cursor=pointer]: Sort by:Featured
+    - generic [ref=f2e250]:
+      - generic [ref=f2e252]:
+        - generic [ref=f2e254]:
+          - generic [ref=f2e259]:
+            - img [ref=f2e262]:
+              - link [ref=f2e264] [cursor=pointer]:
+                - /url: /b?node=21102587031&pd_rd_w=ac68o&content-id=amzn1.sym.c2d1b4aa-ea88-4f08-9329-8bdf43a205eb:amzn1.sym.c2d1b4aa-ea88-4f08-9329-8bdf43a205eb&pf_rd_p=c2d1b4aa-ea88-4f08-9329-8bdf43a205eb&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=NrqmY&pd_rd_r=571c1bbd-efea-4613-9767-d0b1f74d6188&qid=1790681155&ref_=sxts_spks_0_0_c2d1b4aa-ea88-4f08-9329-8bdf43a205eb
+                - img "Save up to 18% with GST invoice and get bulk discounts" [ref=f2e265]
+            - generic [ref=f2e267]:
+              - link "Save up to 18% with GST invoice and get bulk discounts Learn more" [ref=f2e268] [cursor=pointer]:
+                - /url: /b?node=21102587031&pd_rd_w=ac68o&content-id=amzn1.sym.c2d1b4aa-ea88-4f08-9329-8bdf43a205eb:amzn1.sym.c2d1b4aa-ea88-4f08-9329-8bdf43a205eb&pf_rd_p=c2d1b4aa-ea88-4f08-9329-8bdf43a205eb&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=NrqmY&pd_rd_r=571c1bbd-efea-4613-9767-d0b1f74d6188&qid=1790681155&ref_=sxts_spks_0_0_c2d1b4aa-ea88-4f08-9329-8bdf43a205eb
+                - generic [ref=f2e269]: Save up to 18% with GST invoice and get bulk discounts
+                - generic [ref=f2e270]: Learn more
+              - list
+          - generic [ref=f2e272]:
+            - generic [ref=f2e275]:
+              - heading "Results" [level=2] [ref=f2e276]
+              - generic [ref=f2e277]: Check each product page for other buying options.
+            - generic:
+              - list:
+                - listitem [ref=f2e278]:
+                  - generic [ref=f2e286]:
+                    - generic [ref=f2e288]:
+                      - group "Best sellerin Pen Drives" [ref=f2e294]:
+                        - generic "Best seller" [ref=f2e296]
+                      - link [ref=f2e300] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-1-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                    - generic [ref=f2e305]:
+                      - generic [ref=f2e306]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e309] [cursor=pointer]:
+                          - generic [ref=f2e310]: Sponsored
+                        - link [ref=f2e312] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-1-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                          - heading "Sponsored Ad - SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [level=2] [ref=f2e313]: SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)
+                      - generic [ref=f2e314]:
+                        - generic [ref=f2e315]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=f2e317] [cursor=pointer]:
+                            - generic [ref=f2e318]: 4.3 out of 5 stars
+                          - link "5,561 ratings" [ref=f2e321] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-1-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ#customerReviews
+                            - text: (5.5K)
+                        - generic [ref=f2e322]: 2K+ bought in past month
+                      - generic [ref=f2e325]:
+                        - generic [ref=f2e326]:
+                          - generic [ref=f2e328]:
+                            - generic [ref=f2e329]: Price, product page
+                            - link "₹2,069" [ref=f2e330] [cursor=pointer]:
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-1-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                              - generic [ref=f2e331]:
+                                - generic [ref=f2e332]: ₹2,069
+                                - generic [ref=f2e333]: ₹2,069
+                          - generic [ref=f2e337]:
+                            - generic [ref=f2e338]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e339]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e342]:
+                          - generic [ref=f2e343]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e345]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e360] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e361]
+                          - generic [ref=f2e362]: Add to cart
+                - listitem [ref=f2e365]:
+                  - generic [ref=f2e373]:
+                    - link [ref=f2e379] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMTI2MTIzMjMzMDIzMjo6MDo6&url=%2FEVM-EnStore-16GB-Metal-Flash%2Fdp%2FB0C2KQM2JT%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-2-spons%26aref%3Dhtvzof63wE%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=htvzof63wE&sp_cr=ZAZ
+                    - generic [ref=f2e384]:
+                      - generic [ref=f2e385]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e388] [cursor=pointer]:
+                          - generic [ref=f2e389]: Sponsored
+                        - link [ref=f2e391] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMTI2MTIzMjMzMDIzMjo6MDo6&url=%2FEVM-EnStore-16GB-Metal-Flash%2Fdp%2FB0C2KQM2JT%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-2-spons%26aref%3Dhtvzof63wE%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=htvzof63wE&sp_cr=ZAZ
+                          - heading "Sponsored Ad - EVM EnStore 16GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/16GB)" [level=2] [ref=f2e392]: EVM EnStore 16GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/16GB)
+                      - generic [ref=f2e393]:
+                        - generic [ref=f2e394]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=f2e396] [cursor=pointer]:
+                            - generic [ref=f2e397]: 4.1 out of 5 stars
+                          - link "3,534 ratings" [ref=f2e400] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMTI2MTIzMjMzMDIzMjo6MDo6&url=%2FEVM-EnStore-16GB-Metal-Flash%2Fdp%2FB0C2KQM2JT%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-2-spons%26aref%3Dhtvzof63wE%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=htvzof63wE&sp_cr=ZAZ#customerReviews
+                            - text: (3.5K)
+                        - generic [ref=f2e401]: 500+ bought in past month
+                      - generic [ref=f2e404]:
+                        - generic [ref=f2e405]:
+                          - generic [ref=f2e407]:
+                            - generic [ref=f2e408]: Price, product page
+                            - 'link "₹469 M.R.P: ₹1,499 M.R.P: ₹1,499" [ref=f2e409] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfYXRmOjMwMTI2MTIzMjMzMDIzMjo6MDo6&url=%2FEVM-EnStore-16GB-Metal-Flash%2Fdp%2FB0C2KQM2JT%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-2-spons%26aref%3Dhtvzof63wE%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=htvzof63wE&sp_cr=ZAZ
+                              - generic [ref=f2e410]:
+                                - generic [ref=f2e411]: ₹469
+                                - generic [ref=f2e412]: ₹469
+                              - generic [ref=f2e413]: "M.R.P: ₹1,499"
+                              - generic [ref=f2e414]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e415]:
+                                  - generic [ref=f2e416]: ₹1,499
+                                  - text: ₹1,499
+                            - text: (69% off)
+                          - generic [ref=f2e420]:
+                            - generic [ref=f2e421]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e422]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e423]: FREE delivery Sat, 3 Oct
+                        - generic [ref=f2e441] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e442]
+                          - generic [ref=f2e443]: Add to cart
+                - listitem [ref=f2e446]:
+                  - generic [ref=f2e452]:
+                    - generic [ref=f2e454]:
+                      - generic "Amazon's Choice" [ref=f2e457]:
+                        - group "Amazon's Choice for \"Pen Drive\"" [ref=f2e460]:
+                          - generic [ref=f2e461]: Amazon's Choice
+                      - link [ref=f2e466] [cursor=pointer]:
+                        - /url: /HP-v236w-64GB-USB-Drive/dp/B01L8ZNWN2/ref=sr_1_3?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-3
+                    - generic [ref=f2e471]:
+                      - link [ref=f2e473] [cursor=pointer]:
+                        - /url: /HP-v236w-64GB-USB-Drive/dp/B01L8ZNWN2/ref=sr_1_3?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-3
+                        - heading "HP v236w USB 2.0 64GB Pen Drive, Metal" [level=2] [ref=f2e474]
+                      - generic [ref=f2e475]:
+                        - generic [ref=f2e476]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e478] [cursor=pointer]:
+                            - generic [ref=f2e479]: 4.2 out of 5 stars
+                          - link "85,325 ratings" [ref=f2e482] [cursor=pointer]:
+                            - /url: /HP-v236w-64GB-USB-Drive/dp/B01L8ZNWN2/ref=sr_1_3?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-3#customerReviews
+                            - text: (85.3K)
+                        - generic [ref=f2e483]: 3K+ bought in past month
+                      - generic [ref=f2e486]:
+                        - generic [ref=f2e487]:
+                          - link "Sale Price Live" [ref=f2e489] [cursor=pointer]:
+                            - /url: /deals
+                          - generic [ref=f2e495]:
+                            - generic [ref=f2e496]: Price, product page
+                            - 'link "₹829 M.R.P: ₹3,499 M.R.P: ₹3,499" [ref=f2e497] [cursor=pointer]':
+                              - /url: /HP-v236w-64GB-USB-Drive/dp/B01L8ZNWN2/ref=sr_1_3?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-3
+                              - generic [ref=f2e498]:
+                                - generic [ref=f2e499]: ₹829
+                                - generic [ref=f2e500]: ₹829
+                              - generic [ref=f2e501]: "M.R.P: ₹3,499"
+                              - generic [ref=f2e502]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e503]:
+                                  - generic [ref=f2e504]: ₹3,499
+                                  - text: ₹3,499
+                            - text: (76% off)
+                          - generic [ref=f2e508]:
+                            - generic [ref=f2e509]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e510]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e513]:
+                          - generic [ref=f2e514]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e516]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e531] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e532]
+                          - generic [ref=f2e533]: Add to cart
+                        - generic [ref=f2e535]:
+                          - text: More Buying Choices₹828
+                          - link "(3 new offers)" [ref=f2e537] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B01L8ZNWN2/ref=sr_1_3_olp?keywords=Pen+Drive&dib_tag=se&dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&qid=1790681155&sr=8-3
+                - listitem [ref=f2e540]:
+                  - generic [ref=f2e546]:
+                    - link [ref=f2e552] [cursor=pointer]:
+                      - /url: /SANDISK-Cruzer-Pendrive-Warranty-SDCZ50-064G-I35/dp/B00BX5FOCK/ref=sr_1_4?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-4
+                    - generic [ref=f2e557]:
+                      - link [ref=f2e559] [cursor=pointer]:
+                        - /url: /SANDISK-Cruzer-Pendrive-Warranty-SDCZ50-064G-I35/dp/B00BX5FOCK/ref=sr_1_4?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-4
+                        - heading "SANDISK Cruzer Blade 64GB, USB 2.0, Flash drive, Pendrive, Red, 5Y Warranty (SDCZ50-064G-I35)" [level=2] [ref=f2e560]
+                      - generic [ref=f2e561]:
+                        - generic [ref=f2e562]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e564] [cursor=pointer]:
+                            - generic [ref=f2e565]: 4.2 out of 5 stars
+                          - link "276,142 ratings" [ref=f2e568] [cursor=pointer]:
+                            - /url: /SANDISK-Cruzer-Pendrive-Warranty-SDCZ50-064G-I35/dp/B00BX5FOCK/ref=sr_1_4?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-4#customerReviews
+                            - text: (2.7L)
+                        - generic [ref=f2e569]: 2K+ bought in past month
+                      - generic [ref=f2e572]:
+                        - generic [ref=f2e573]:
+                          - generic [ref=f2e575]:
+                            - generic [ref=f2e576]: Price, product page
+                            - 'link "₹909 ( ₹14.20 /count) M.R.P: ₹1,100 M.R.P: ₹1,100" [ref=f2e577] [cursor=pointer]':
+                              - /url: /SANDISK-Cruzer-Pendrive-Warranty-SDCZ50-064G-I35/dp/B00BX5FOCK/ref=sr_1_4?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-4
+                              - generic [ref=f2e578]:
+                                - generic [ref=f2e579]: ₹909
+                                - generic [ref=f2e580]: ₹909
+                              - generic [ref=f2e581]:
+                                - text: (
+                                - generic [ref=f2e582]:
+                                  - generic [ref=f2e583]: ₹14.20
+                                  - text: ₹14.20
+                                - text: /count)
+                              - generic [ref=f2e584]: "M.R.P: ₹1,100"
+                              - generic [ref=f2e585]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e586]:
+                                  - generic [ref=f2e587]: ₹1,100
+                                  - text: ₹1,100
+                            - text: (17% off)
+                          - generic [ref=f2e591]:
+                            - generic [ref=f2e592]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e593]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e596]:
+                          - generic [ref=f2e597]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e599]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e614] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e615]
+                          - generic [ref=f2e616]: Add to cart
+                - listitem [ref=f2e619]:
+                  - generic [ref=f2e627]:
+                    - link [ref=f2e633] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTI2MTIzMjMzMDEzMjo6MDo6&url=%2FEVM-32GB-EnX-Flash-Drive%2Fdp%2FB0DG5G4JN5%2Fref%3Dsr_1_5_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-5-spons%26aref%3D6L4PQIMB0u%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=6L4PQIMB0u&sp_cr=ZAZ
+                    - generic [ref=f2e638]:
+                      - generic [ref=f2e639]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e642] [cursor=pointer]:
+                          - generic [ref=f2e643]: Sponsored
+                        - link [ref=f2e645] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTI2MTIzMjMzMDEzMjo6MDo6&url=%2FEVM-32GB-EnX-Flash-Drive%2Fdp%2FB0DG5G4JN5%2Fref%3Dsr_1_5_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-5-spons%26aref%3D6L4PQIMB0u%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=6L4PQIMB0u&sp_cr=ZAZ
+                          - heading "Sponsored Ad - EVM EnX 32GB USB 3.2 Gen 1 Flash Drive | Exceptional 120MB/s | Sturdy Premium Metal Body | Convenient Integrated Key Loop | Laptop Desktop Smart TV Car Stereo | 10 Years Warranty (ENX/32GB)" [level=2] [ref=f2e646]: EVM EnX 32GB USB 3.2 Gen 1 Flash Drive | Exceptional 120MB/s | Sturdy Premium Metal Body | Convenient Integrated Key Loop | Laptop Desktop Smart TV Car Stereo | 10 Years Warranty (ENX/32GB)
+                      - generic [ref=f2e647]:
+                        - generic [ref=f2e648]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e650] [cursor=pointer]:
+                            - generic [ref=f2e651]: 4.2 out of 5 stars
+                          - link "406 ratings" [ref=f2e654] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTI2MTIzMjMzMDEzMjo6MDo6&url=%2FEVM-32GB-EnX-Flash-Drive%2Fdp%2FB0DG5G4JN5%2Fref%3Dsr_1_5_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-5-spons%26aref%3D6L4PQIMB0u%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=6L4PQIMB0u&sp_cr=ZAZ#customerReviews
+                            - text: (406)
+                        - generic [ref=f2e655]: 100+ bought in past month
+                      - generic [ref=f2e658]:
+                        - generic [ref=f2e659]:
+                          - generic [ref=f2e661]:
+                            - generic [ref=f2e662]: Price, product page
+                            - 'link "₹699 M.R.P: ₹1,799 M.R.P: ₹1,799" [ref=f2e663] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTI2MTIzMjMzMDEzMjo6MDo6&url=%2FEVM-32GB-EnX-Flash-Drive%2Fdp%2FB0DG5G4JN5%2Fref%3Dsr_1_5_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-5-spons%26aref%3D6L4PQIMB0u%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=6L4PQIMB0u&sp_cr=ZAZ
+                              - generic [ref=f2e664]:
+                                - generic [ref=f2e665]: ₹699
+                                - generic [ref=f2e666]: ₹699
+                              - generic [ref=f2e667]: "M.R.P: ₹1,799"
+                              - generic [ref=f2e668]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e669]:
+                                  - generic [ref=f2e670]: ₹1,799
+                                  - text: ₹1,799
+                            - text: (61% off)
+                          - generic [ref=f2e673]:
+                            - generic [ref=f2e674]: You pay ₹629.10
+                            - text: with coupon
+                        - generic [ref=f2e677]:
+                          - generic [ref=f2e678]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e680]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e695] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e696]
+                          - generic [ref=f2e697]: Add to cart
+                - listitem [ref=f2e700]:
+                  - generic [ref=f2e708]:
+                    - link [ref=f2e714] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDA2Nzg5NzM4MDQzMjo6MDo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsr_1_6_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-6-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                    - generic [ref=f2e719]:
+                      - generic [ref=f2e720]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e723] [cursor=pointer]:
+                          - generic [ref=f2e724]: Sponsored
+                        - link [ref=f2e726] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDA2Nzg5NzM4MDQzMjo6MDo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsr_1_6_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-6-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Amazon Basics 64 GB USB 3.0 Pen Drive | Flash Drive | Read Speed Upto 120 MB/s | with Key Ring | Metallic (Silver)" [level=2] [ref=f2e727]: Amazon Basics 64 GB USB 3.0 Pen Drive | Flash Drive | Read Speed Upto 120 MB/s | with Key Ring | Metallic (Silver)
+                      - generic [ref=f2e728]:
+                        - generic [ref=f2e729]:
+                          - text: "4.0"
+                          - button "4.0 out of 5 stars, rating details" [ref=f2e731] [cursor=pointer]:
+                            - generic [ref=f2e732]: 4.0 out of 5 stars
+                          - link "971 ratings" [ref=f2e735] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDA2Nzg5NzM4MDQzMjo6MDo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsr_1_6_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-6-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ#customerReviews
+                            - text: (971)
+                        - generic [ref=f2e736]: 100+ bought in past month
+                      - generic [ref=f2e739]:
+                        - generic [ref=f2e740]:
+                          - generic [ref=f2e742]:
+                            - generic [ref=f2e743]: Price, product page
+                            - 'link "₹899 M.R.P: ₹1,100 M.R.P: ₹1,100" [ref=f2e744] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDA2Nzg5NzM4MDQzMjo6MDo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsr_1_6_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-6-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                              - generic [ref=f2e745]:
+                                - generic [ref=f2e746]: ₹899
+                                - generic [ref=f2e747]: ₹899
+                              - generic [ref=f2e748]: "M.R.P: ₹1,100"
+                              - generic [ref=f2e749]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e750]:
+                                  - generic [ref=f2e751]: ₹1,100
+                                  - text: ₹1,100
+                            - text: (18% off)
+                          - generic [ref=f2e755]:
+                            - generic [ref=f2e756]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e757]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e760]:
+                          - generic [ref=f2e761]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e763]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e778] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e779]
+                          - generic [ref=f2e780]: Add to cart
+          - generic [ref=f2e786]:
+            - generic [ref=f2e791]:
+              - heading "Trending now" [level=2] [ref=f2e793]
+              - button "View Sponsored information or leave ad feedback" [ref=f2e796] [cursor=pointer]: Sponsored
+            - region "Trending now" [ref=f2e798]:
+              - list [ref=f2e804]:
+                - listitem "1 of 5" [ref=f2e805]:
+                  - generic [ref=f2e811]:
+                    - group "Best sellerin Pen Drives" [ref=f2e816]:
+                      - generic "Best seller" [ref=f2e818]
+                    - link [ref=f2e821] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DNFSSF3F%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                    - generic [ref=f2e824]:
+                      - link [ref=f2e826] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DNFSSF3F%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                        - heading "Sponsored Ad - SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [level=2] [ref=f2e827]: SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)
+                      - generic [ref=f2e828]:
+                        - generic [ref=f2e829]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=f2e831] [cursor=pointer]:
+                            - generic [ref=f2e832]: 4.3 out of 5 stars
+                          - link "5,561 ratings" [ref=f2e835] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DNFSSF3F%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ#customerReviews
+                            - text: (5.5K)
+                        - generic [ref=f2e836]: 2K+ bought in past month
+                      - generic [ref=f2e837]:
+                        - generic [ref=f2e839]:
+                          - generic [ref=f2e840]: Price, product page
+                          - link "₹2,069" [ref=f2e841] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDQ1NTYzMTgzNjMzMjo6MDo6&url=%2FSanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD%2Fdp%2FB0DNFSSF3F%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DNFSSF3F%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-1-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=4If3zYQru4&sp_cr=ZAZ
+                            - generic [ref=f2e842]:
+                              - generic [ref=f2e843]: ₹2,069
+                              - generic [ref=f2e844]: ₹2,069
+                        - generic [ref=f2e848]:
+                          - generic [ref=f2e849]: Up to 5% back with Amazon Pay ICICI card
+                          - generic [ref=f2e850]: Up to 5% back with Amazon Pay ICIC...
+                      - generic [ref=f2e854]:
+                        - generic [ref=f2e855]: FREE delivery Thu, 1 Oct
+                        - generic [ref=f2e857]: Or fastest delivery Tomorrow, 30 Sept
+                      - generic [ref=f2e872] [cursor=pointer]:
+                        - button "Add to cart" [ref=f2e873]
+                        - generic [ref=f2e874]: Add to cart
+                - listitem "2 of 5" [ref=f2e875]:
+                  - generic [ref=f2e881]:
+                    - link [ref=f2e884] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDcxMTgzMjk4MTIzMjo6MTo6&url=%2FEVM-EnStore-64GB-Metal-Flash%2Fdp%2FB0C2KS1WLS%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C2KS1WLS%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DfsbcmBMBJJ%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=fsbcmBMBJJ&sp_cr=ZAZ
+                    - generic [ref=f2e887]:
+                      - link [ref=f2e889] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDcxMTgzMjk4MTIzMjo6MTo6&url=%2FEVM-EnStore-64GB-Metal-Flash%2Fdp%2FB0C2KS1WLS%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C2KS1WLS%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DfsbcmBMBJJ%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=fsbcmBMBJJ&sp_cr=ZAZ
+                        - heading "Sponsored Ad - EVM EnStore 64GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/64GB)" [level=2] [ref=f2e890]: EVM EnStore 64GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/64GB)
+                      - generic [ref=f2e891]:
+                        - generic [ref=f2e892]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=f2e894] [cursor=pointer]:
+                            - generic [ref=f2e895]: 4.1 out of 5 stars
+                          - link "3,534 ratings" [ref=f2e898] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDcxMTgzMjk4MTIzMjo6MTo6&url=%2FEVM-EnStore-64GB-Metal-Flash%2Fdp%2FB0C2KS1WLS%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C2KS1WLS%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DfsbcmBMBJJ%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=fsbcmBMBJJ&sp_cr=ZAZ#customerReviews
+                            - text: (3.5K)
+                        - generic [ref=f2e899]: 300+ bought in past month
+                      - generic [ref=f2e900]:
+                        - generic [ref=f2e902]:
+                          - generic [ref=f2e903]: Price, product page
+                          - 'link "₹799 M.R.P: ₹2,199 M.R.P: ₹2,199" [ref=f2e904] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDcxMTgzMjk4MTIzMjo6MTo6&url=%2FEVM-EnStore-64GB-Metal-Flash%2Fdp%2FB0C2KS1WLS%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C2KS1WLS%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-2-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DfsbcmBMBJJ%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=fsbcmBMBJJ&sp_cr=ZAZ
+                            - generic [ref=f2e905]:
+                              - generic [ref=f2e906]: ₹799
+                              - generic [ref=f2e907]: ₹799
+                            - generic [ref=f2e908]: "M.R.P: ₹2,199"
+                            - generic [ref=f2e909]:
+                              - text: "M.R.P:"
+                              - generic [ref=f2e910]:
+                                - generic [ref=f2e911]: ₹2,199
+                                - text: ₹2,199
+                          - text: (64% off)
+                        - generic [ref=f2e915]:
+                          - generic [ref=f2e916]: Up to 5% back with Amazon Pay ICICI card
+                          - generic [ref=f2e917]: Up to 5% back with Amazon Pay ICIC...
+                      - generic [ref=f2e918]: FREE delivery Fri, 2 Oct
+                      - generic [ref=f2e937] [cursor=pointer]:
+                        - button "Add to cart" [ref=f2e938]
+                        - generic [ref=f2e939]: Add to cart
+                - listitem "3 of 5" [ref=f2e940]:
+                  - generic [ref=f2e946]:
+                    - link [ref=f2e949] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA2Nzg5NzM4MDQzMjo6Mjo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C9DVHBCH%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                    - generic [ref=f2e952]:
+                      - link [ref=f2e954] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA2Nzg5NzM4MDQzMjo6Mjo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C9DVHBCH%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                        - heading "Sponsored Ad - Amazon Basics 64 GB USB 3.0 Pen Drive | Flash Drive | Read Speed Upto 120 MB/s | with Key Ring | Metallic (Silver)" [level=2] [ref=f2e955]: Amazon Basics 64 GB USB 3.0 Pen Drive | Flash Drive | Read Speed Upto 120 MB/s | with Key Ring | Metallic (Silver)
+                      - generic [ref=f2e956]:
+                        - generic [ref=f2e957]:
+                          - text: "4.0"
+                          - button "4.0 out of 5 stars, rating details" [ref=f2e959] [cursor=pointer]:
+                            - generic [ref=f2e960]: 4.0 out of 5 stars
+                          - link "971 ratings" [ref=f2e963] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA2Nzg5NzM4MDQzMjo6Mjo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C9DVHBCH%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ#customerReviews
+                            - text: (971)
+                        - generic [ref=f2e964]: 100+ bought in past month
+                      - generic [ref=f2e965]:
+                        - generic [ref=f2e967]:
+                          - generic [ref=f2e968]: Price, product page
+                          - 'link "₹899 M.R.P: ₹1,100 M.R.P: ₹1,100" [ref=f2e969] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMDA2Nzg5NzM4MDQzMjo6Mjo6&url=%2FAmazon-Basics-Drive-Metallic-Silver%2Fdp%2FB0C9DVHBCH%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0C9DVHBCH%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-3-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3Dm8NGJURI3S%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=m8NGJURI3S&sp_cr=ZAZ
+                            - generic [ref=f2e970]:
+                              - generic [ref=f2e971]: ₹899
+                              - generic [ref=f2e972]: ₹899
+                            - generic [ref=f2e973]: "M.R.P: ₹1,100"
+                            - generic [ref=f2e974]:
+                              - text: "M.R.P:"
+                              - generic [ref=f2e975]:
+                                - generic [ref=f2e976]: ₹1,100
+                                - text: ₹1,100
+                          - text: (18% off)
+                        - generic [ref=f2e980]:
+                          - generic [ref=f2e981]: Up to 5% back with Amazon Pay ICICI card
+                          - generic [ref=f2e982]: Up to 5% back with Amazon Pay ICIC...
+                      - generic [ref=f2e986]:
+                        - generic [ref=f2e987]: FREE delivery Thu, 1 Oct
+                        - generic [ref=f2e989]: Or fastest delivery Tomorrow, 30 Sept
+                      - generic [ref=f2e1004] [cursor=pointer]:
+                        - button "Add to cart" [ref=f2e1005]
+                        - generic [ref=f2e1006]: Add to cart
+                - listitem "4 of 5" [ref=f2e1007]:
+                  - generic [ref=f2e1013]:
+                    - link [ref=f2e1016] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MTIzMjMyOTIzMjo6Mzo6&url=%2FEVM-256GB-EnX-Flash-Drive%2Fdp%2FB0DG5B2D15%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DG5B2D15%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DPtLmq5fnOX%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=PtLmq5fnOX&sp_cr=ZAZ
+                    - generic [ref=f2e1019]:
+                      - link [ref=f2e1021] [cursor=pointer]:
+                        - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MTIzMjMyOTIzMjo6Mzo6&url=%2FEVM-256GB-EnX-Flash-Drive%2Fdp%2FB0DG5B2D15%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DG5B2D15%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DPtLmq5fnOX%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=PtLmq5fnOX&sp_cr=ZAZ
+                        - heading "Sponsored Ad - EVM EnX 256GB USB 3.2 Gen 1 Flash Drive | Exceptional 120MB/s Read | Sturdy Premium Metal Body | Convenient Integrated Key Loop | Laptop Desktop Smart TV Car Stereo | 10 Years Warranty (ENX/256GB)" [level=2] [ref=f2e1022]: EVM EnX 256GB USB 3.2 Gen 1 Flash Drive | Exceptional 120MB/s Read | Sturdy Premium Metal Body | Convenient Integrated Key Loop | Laptop Desktop Smart TV Car Stereo | 10 Years Warranty (ENX/256GB)
+                      - generic [ref=f2e1024]:
+                        - text: "4.2"
+                        - button "4.2 out of 5 stars, rating details" [ref=f2e1026] [cursor=pointer]:
+                          - generic [ref=f2e1027]: 4.2 out of 5 stars
+                        - link "406 ratings" [ref=f2e1030] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MTIzMjMyOTIzMjo6Mzo6&url=%2FEVM-256GB-EnX-Flash-Drive%2Fdp%2FB0DG5B2D15%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DG5B2D15%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DPtLmq5fnOX%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=PtLmq5fnOX&sp_cr=ZAZ#customerReviews
+                          - text: (406)
+                      - generic [ref=f2e1031]:
+                        - generic [ref=f2e1033]:
+                          - generic [ref=f2e1034]: Price, product page
+                          - 'link "₹2,899 M.R.P: ₹3,999 M.R.P: ₹3,999" [ref=f2e1035] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MTIzMjMyOTIzMjo6Mzo6&url=%2FEVM-256GB-EnX-Flash-Drive%2Fdp%2FB0DG5B2D15%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB0DG5B2D15%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-4-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DPtLmq5fnOX%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=PtLmq5fnOX&sp_cr=ZAZ
+                            - generic [ref=f2e1036]:
+                              - generic [ref=f2e1037]: ₹2,899
+                              - generic [ref=f2e1038]: ₹2,899
+                            - generic [ref=f2e1039]: "M.R.P: ₹3,999"
+                            - generic [ref=f2e1040]:
+                              - text: "M.R.P:"
+                              - generic [ref=f2e1041]:
+                                - generic [ref=f2e1042]: ₹3,999
+                                - text: ₹3,999
+                          - text: (28% off)
+                        - generic [ref=f2e1046]:
+                          - generic [ref=f2e1047]: Up to 5% back with Amazon Pay ICICI card
+                          - generic [ref=f2e1048]: Up to 5% back with Amazon Pay ICIC...
+                      - generic [ref=f2e1049]: FREE delivery Fri, 2 Oct
+                      - generic [ref=f2e1068] [cursor=pointer]:
+                        - button "Add to cart" [ref=f2e1069]
+                        - generic [ref=f2e1070]: Add to cart
+                - listitem "5 of 5" [ref=f2e1071]:
+                  - generic [ref=f2e1077]:
+                    - link [ref=f2e1080] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MzU3NDkwNzgzMjo6NDo6&url=%2FiDiskk128GB-USB3-0-Photo-Memory-iPhone%2Fdp%2FB07BQMJ6V6%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB07BQMJ6V6%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQ61CxxH8gW%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Q61CxxH8gW&sp_cr=ZAZ
+                    - generic [ref=f2e1083]:
+                      - generic [ref=f2e1084]:
+                        - link [ref=f2e1085] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MzU3NDkwNzgzMjo6NDo6&url=%2FiDiskk128GB-USB3-0-Photo-Memory-iPhone%2Fdp%2FB07BQMJ6V6%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB07BQMJ6V6%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQ61CxxH8gW%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Q61CxxH8gW&sp_cr=ZAZ
+                          - heading "Sponsored Ad - iDiskk128GB MFi 4in1 USB3.0 Photo Stick &Memory Stick for iPhone/iPad/Mac" [level=2] [ref=f2e1086]: iDiskk128GB MFi 4in1 USB3.0 Photo Stick &Memory Stick for iPhone/iPad/Mac
+                        - generic "Lightning/USB-C/USB-A/Micro USB Flash Drive,Memory drive to Auto Backup Videos|Files for iPhone17/16/15/14/13/12/Android/PC" [ref=f2e1088]
+                      - generic [ref=f2e1090]:
+                        - text: "4.2"
+                        - button "4.2 out of 5 stars, rating details" [ref=f2e1092] [cursor=pointer]:
+                          - generic [ref=f2e1093]: 4.2 out of 5 stars
+                        - link "3,119 ratings" [ref=f2e1096] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MzU3NDkwNzgzMjo6NDo6&url=%2FiDiskk128GB-USB3-0-Photo-Memory-iPhone%2Fdp%2FB07BQMJ6V6%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB07BQMJ6V6%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQ61CxxH8gW%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Q61CxxH8gW&sp_cr=ZAZ#customerReviews
+                          - text: (3.1K)
+                      - generic [ref=f2e1097]:
+                        - link "Limited time deal" [ref=f2e1099] [cursor=pointer]:
+                          - /url: /deals
+                        - generic [ref=f2e1105]:
+                          - generic [ref=f2e1106]: Price, product page
+                          - 'link "₹5,699 M.R.P: ₹7,399 M.R.P: ₹7,399" [ref=f2e1107] [cursor=pointer]':
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzg4Mzg4NzQxMDExNTc4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX3RoZW1hdGljOjMwMTI2MzU3NDkwNzgzMjo6NDo6&url=%2FiDiskk128GB-USB3-0-Photo-Memory-iPhone%2Fdp%2FB07BQMJ6V6%2Fref%3Dsxin_13_pa_sp_search_thematic_sspa%3Fcontent-id%3Damzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%253Aamzn1.sym.6e35d58e-d276-4d9c-918a-3d084949b530%26cv_ct_cx%3DPen%2BDrive%26keywords%3DPen%2BDrive%26pd_rd_i%3DB07BQMJ6V6%26pd_rd_r%3D11aedf88-ee89-40f3-8476-0d12535e11fd%26pd_rd_w%3DbVSz4%26pd_rd_wg%3D9BzVY%26pf_rd_p%3D6e35d58e-d276-4d9c-918a-3d084949b530%26pf_rd_r%3DZJBH5FFJGWXVYY9VKTM0%26qid%3D1790681155%26sbo%3DRZvfv%252F%252FHxDF%252BO5021pAnSA%253D%253D%26sr%3D1-5-66673dcf-083f-43ba-b782-d4a436cc5cfb-spons%26aref%3DQ61CxxH8gW%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM%26psc%3D1&aref=Q61CxxH8gW&sp_cr=ZAZ
+                            - generic [ref=f2e1108]:
+                              - generic [ref=f2e1109]: ₹5,699
+                              - generic [ref=f2e1110]: ₹5,699
+                            - generic [ref=f2e1111]: "M.R.P: ₹7,399"
+                            - generic [ref=f2e1112]:
+                              - text: "M.R.P:"
+                              - generic [ref=f2e1113]:
+                                - generic [ref=f2e1114]: ₹7,399
+                                - text: ₹7,399
+                          - text: (23% off)
+                        - generic [ref=f2e1118]:
+                          - generic [ref=f2e1119]: Up to 5% back with Amazon Pay ICICI card
+                          - generic [ref=f2e1120]: Up to 5% back with Amazon Pay ICIC...
+                      - generic [ref=f2e1124]:
+                        - generic [ref=f2e1125]: FREE delivery Thu, 1 Oct
+                        - generic [ref=f2e1127]: Or fastest delivery Tomorrow, 30 Sept
+                      - generic [ref=f2e1142] [cursor=pointer]:
+                        - button "Add to cart" [ref=f2e1143]
+                        - generic [ref=f2e1144]: Add to cart
+          - generic [ref=f2e1146]:
+            - heading "More results" [level=2] [ref=f2e1150]
+            - generic:
+              - list:
+                - listitem [ref=f2e1151]:
+                  - generic [ref=f2e1157]:
+                    - link [ref=f2e1163] [cursor=pointer]:
+                      - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0G494K63Q/ref=sr_1_7?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-7
+                    - generic [ref=f2e1168]:
+                      - link [ref=f2e1170] [cursor=pointer]:
+                        - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0G494K63Q/ref=sr_1_7?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-7
+                        - heading "Geonix Pendrive I USB 2.0 I Keyring Design I Lightweight I Variant 4GB I 5 Years Warranty (Black)" [level=2] [ref=f2e1171]
+                      - generic [ref=f2e1172]:
+                        - generic [ref=f2e1173]:
+                          - text: "3.7"
+                          - button "3.7 out of 5 stars, rating details" [ref=f2e1175] [cursor=pointer]:
+                            - generic [ref=f2e1176]: 3.7 out of 5 stars
+                          - link "143 ratings" [ref=f2e1179] [cursor=pointer]:
+                            - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0G494K63Q/ref=sr_1_7?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-7#customerReviews
+                            - text: (143)
+                        - generic [ref=f2e1180]: 1K+ bought in past month
+                      - generic [ref=f2e1183]:
+                        - generic [ref=f2e1184]:
+                          - generic [ref=f2e1186]:
+                            - generic [ref=f2e1187]: Price, product page
+                            - 'link "₹385 M.R.P: ₹599 M.R.P: ₹599" [ref=f2e1188] [cursor=pointer]':
+                              - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0G494K63Q/ref=sr_1_7?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-7
+                              - generic [ref=f2e1189]:
+                                - generic [ref=f2e1190]: ₹385
+                                - generic [ref=f2e1191]: ₹385
+                              - generic [ref=f2e1192]: "M.R.P: ₹599"
+                              - generic [ref=f2e1193]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1194]:
+                                  - generic [ref=f2e1195]: ₹599
+                                  - text: ₹599
+                            - text: (36% off)
+                          - generic [ref=f2e1199]:
+                            - generic [ref=f2e1200]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1201]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1202]: FREE delivery Sat, 3 Oct
+                        - generic [ref=f2e1220] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1221]
+                          - generic [ref=f2e1222]: Add to cart
+                - listitem [ref=f2e1225]:
+                  - generic [ref=f2e1231]:
+                    - link [ref=f2e1237] [cursor=pointer]:
+                      - /url: /EVM-EnStore-4GB-Metal-Flash/dp/B0C2KQXVLQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-8
+                    - generic [ref=f2e1242]:
+                      - link [ref=f2e1244] [cursor=pointer]:
+                        - /url: /EVM-EnStore-4GB-Metal-Flash/dp/B0C2KQXVLQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-8
+                        - heading "EVM EnStore 4GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read| Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/4GB)" [level=2] [ref=f2e1245]
+                      - generic [ref=f2e1246]:
+                        - generic [ref=f2e1247]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=f2e1249] [cursor=pointer]:
+                            - generic [ref=f2e1250]: 4.1 out of 5 stars
+                          - link "3,534 ratings" [ref=f2e1253] [cursor=pointer]:
+                            - /url: /EVM-EnStore-4GB-Metal-Flash/dp/B0C2KQXVLQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-8#customerReviews
+                            - text: (3.5K)
+                        - generic [ref=f2e1254]: 1K+ bought in past month
+                      - generic [ref=f2e1257]:
+                        - generic [ref=f2e1258]:
+                          - generic [ref=f2e1260]:
+                            - generic [ref=f2e1261]: Price, product page
+                            - 'link "₹389 M.R.P: ₹699 M.R.P: ₹699" [ref=f2e1262] [cursor=pointer]':
+                              - /url: /EVM-EnStore-4GB-Metal-Flash/dp/B0C2KQXVLQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-8
+                              - generic [ref=f2e1263]:
+                                - generic [ref=f2e1264]: ₹389
+                                - generic [ref=f2e1265]: ₹389
+                              - generic [ref=f2e1266]: "M.R.P: ₹699"
+                              - generic [ref=f2e1267]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1268]:
+                                  - generic [ref=f2e1269]: ₹699
+                                  - text: ₹699
+                            - text: (44% off)
+                          - generic [ref=f2e1273]:
+                            - generic [ref=f2e1274]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1275]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1276]: FREE delivery Sat, 3 Oct
+                        - generic [ref=f2e1294] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1295]
+                          - generic [ref=f2e1296]: Add to cart
+                - listitem [ref=f2e1299]:
+                  - generic [ref=f2e1307]:
+                    - link [ref=f2e1313] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTEzNTM3NjU0MjkzMjo6MDo6&url=%2FPendrive-Keyring-Lightweight-Variant-Warranty%2Fdp%2FB0G494K63Q%2Fref%3Dsr_1_9_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-9-spons%26aref%3DdAEBQiE1FY%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=dAEBQiE1FY&sp_cr=ZAZ
+                    - generic [ref=f2e1318]:
+                      - generic [ref=f2e1319]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e1322] [cursor=pointer]:
+                          - generic [ref=f2e1323]: Sponsored
+                        - link [ref=f2e1325] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTEzNTM3NjU0MjkzMjo6MDo6&url=%2FPendrive-Keyring-Lightweight-Variant-Warranty%2Fdp%2FB0G494K63Q%2Fref%3Dsr_1_9_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-9-spons%26aref%3DdAEBQiE1FY%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=dAEBQiE1FY&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Geonix Pendrive I USB 2.0 I Keyring Design I Lightweight I Variant 4GB I 5 Years Warranty (Black)" [level=2] [ref=f2e1326]: Geonix Pendrive I USB 2.0 I Keyring Design I Lightweight I Variant 4GB I 5 Years Warranty (Black)
+                      - generic [ref=f2e1327]:
+                        - generic [ref=f2e1328]:
+                          - text: "3.7"
+                          - button "3.7 out of 5 stars, rating details" [ref=f2e1330] [cursor=pointer]:
+                            - generic [ref=f2e1331]: 3.7 out of 5 stars
+                          - link "143 ratings" [ref=f2e1334] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTEzNTM3NjU0MjkzMjo6MDo6&url=%2FPendrive-Keyring-Lightweight-Variant-Warranty%2Fdp%2FB0G494K63Q%2Fref%3Dsr_1_9_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-9-spons%26aref%3DdAEBQiE1FY%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=dAEBQiE1FY&sp_cr=ZAZ#customerReviews
+                            - text: (143)
+                        - generic [ref=f2e1335]: 1K+ bought in past month
+                      - generic [ref=f2e1338]:
+                        - generic [ref=f2e1339]:
+                          - generic [ref=f2e1341]:
+                            - generic [ref=f2e1342]: Price, product page
+                            - 'link "₹385 M.R.P: ₹599 M.R.P: ₹599" [ref=f2e1343] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMTEzNTM3NjU0MjkzMjo6MDo6&url=%2FPendrive-Keyring-Lightweight-Variant-Warranty%2Fdp%2FB0G494K63Q%2Fref%3Dsr_1_9_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-9-spons%26aref%3DdAEBQiE1FY%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=dAEBQiE1FY&sp_cr=ZAZ
+                              - generic [ref=f2e1344]:
+                                - generic [ref=f2e1345]: ₹385
+                                - generic [ref=f2e1346]: ₹385
+                              - generic [ref=f2e1347]: "M.R.P: ₹599"
+                              - generic [ref=f2e1348]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1349]:
+                                  - generic [ref=f2e1350]: ₹599
+                                  - text: ₹599
+                            - text: (36% off)
+                          - generic [ref=f2e1354]:
+                            - generic [ref=f2e1355]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1356]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1357]: FREE delivery Sat, 3 Oct
+                        - generic [ref=f2e1375] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1376]
+                          - generic [ref=f2e1377]: Add to cart
+                - listitem [ref=f2e1380]:
+                  - generic [ref=f2e1388]:
+                    - link [ref=f2e1394] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDAxMTIxODI0NzYzMjo6MDo6&url=%2FGeneric-Pen-Drive-Bollywood-Song%2Fdp%2FB09WW2RQ48%2Fref%3Dsr_1_10_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-10-spons%26aref%3DavCfbZhxQF%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=avCfbZhxQF&sp_cr=ZAZ
+                    - generic [ref=f2e1399]:
+                      - generic [ref=f2e1400]:
+                        - button "View Sponsored information or leave ad feedback" [ref=f2e1403] [cursor=pointer]:
+                          - generic [ref=f2e1404]: Sponsored
+                        - link [ref=f2e1406] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDAxMTIxODI0NzYzMjo6MDo6&url=%2FGeneric-Pen-Drive-Bollywood-Song%2Fdp%2FB09WW2RQ48%2Fref%3Dsr_1_10_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-10-spons%26aref%3DavCfbZhxQF%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=avCfbZhxQF&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Generic Pen Drive - 90's Bollywood Song Vol - 2 // CAR Song // Long Drive Song // USB 16GB //" [level=2] [ref=f2e1407]: Generic Pen Drive - 90's Bollywood Song Vol - 2 // CAR Song // Long Drive Song // USB 16GB //
+                      - generic [ref=f2e1409]:
+                        - text: "3.8"
+                        - button "3.8 out of 5 stars, rating details" [ref=f2e1411] [cursor=pointer]:
+                          - generic [ref=f2e1412]: 3.8 out of 5 stars
+                        - link "11 ratings" [ref=f2e1415] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDAxMTIxODI0NzYzMjo6MDo6&url=%2FGeneric-Pen-Drive-Bollywood-Song%2Fdp%2FB09WW2RQ48%2Fref%3Dsr_1_10_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-10-spons%26aref%3DavCfbZhxQF%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=avCfbZhxQF&sp_cr=ZAZ#customerReviews
+                          - text: (11)
+                      - generic [ref=f2e1418]:
+                        - generic [ref=f2e1419]:
+                          - generic [ref=f2e1421]:
+                            - generic [ref=f2e1422]: Price, product page
+                            - link "₹1,299" [ref=f2e1423] [cursor=pointer]:
+                              - /url: /sspa/click?ie=UTF8&spc=MTozNzQ0MTc0MDU1OTYwNDgxOjE3OTA2ODExNTU6c3BfbXRmOjMwMDAxMTIxODI0NzYzMjo6MDo6&url=%2FGeneric-Pen-Drive-Bollywood-Song%2Fdp%2FB09WW2RQ48%2Fref%3Dsr_1_10_sspa%3Fdib%3DeyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8%26dib_tag%3Dse%26keywords%3DPen%2BDrive%26qid%3D1790681155%26sr%3D8-10-spons%26aref%3DavCfbZhxQF%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=avCfbZhxQF&sp_cr=ZAZ
+                              - generic [ref=f2e1424]:
+                                - generic [ref=f2e1425]: ₹1,299
+                                - generic [ref=f2e1426]: ₹1,299
+                          - generic [ref=f2e1430]:
+                            - generic [ref=f2e1431]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1432]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1433]: ₹80 delivery Wed, 7 Oct
+                        - generic [ref=f2e1453] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1454]
+                          - generic [ref=f2e1455]: Add to cart
+                - listitem [ref=f2e1458]:
+                  - generic [ref=f2e1464]:
+                    - link [ref=f2e1470] [cursor=pointer]:
+                      - /url: /SANDISK-Ultra-Pendrive-Warranty-SDCZ73-064G-I35/dp/B07SLMR1K6/ref=sr_1_11?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-11
+                    - generic [ref=f2e1475]:
+                      - link [ref=f2e1477] [cursor=pointer]:
+                        - /url: /SANDISK-Ultra-Pendrive-Warranty-SDCZ73-064G-I35/dp/B07SLMR1K6/ref=sr_1_11?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-11
+                        - heading "SANDISK Ultra Flair 64GB, USB 3.0, Flash Drive, Upto 150MB/s R, Pendrive, Metal, 5Y Warranty (SDCZ73-064G-I35)" [level=2] [ref=f2e1478]
+                      - generic [ref=f2e1479]:
+                        - generic [ref=f2e1480]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=f2e1482] [cursor=pointer]:
+                            - generic [ref=f2e1483]: 4.3 out of 5 stars
+                          - link "37,488 ratings" [ref=f2e1486] [cursor=pointer]:
+                            - /url: /SANDISK-Ultra-Pendrive-Warranty-SDCZ73-064G-I35/dp/B07SLMR1K6/ref=sr_1_11?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-11#customerReviews
+                            - text: (37.4K)
+                        - generic [ref=f2e1487]: 2K+ bought in past month
+                      - generic [ref=f2e1490]:
+                        - generic [ref=f2e1491]:
+                          - generic [ref=f2e1493]:
+                            - generic [ref=f2e1494]: Price, product page
+                            - link "₹1,000" [ref=f2e1495] [cursor=pointer]:
+                              - /url: /SANDISK-Ultra-Pendrive-Warranty-SDCZ73-064G-I35/dp/B07SLMR1K6/ref=sr_1_11?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-11
+                              - generic [ref=f2e1496]:
+                                - generic [ref=f2e1497]: ₹1,000
+                                - generic [ref=f2e1498]: ₹1,000
+                          - generic [ref=f2e1502]:
+                            - generic [ref=f2e1503]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1504]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1507]:
+                          - generic [ref=f2e1508]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1510]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1525] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1526]
+                          - generic [ref=f2e1527]: Add to cart
+                - listitem [ref=f2e1530]:
+                  - generic [ref=f2e1536]:
+                    - link [ref=f2e1542] [cursor=pointer]:
+                      - /url: /Amazon-Basics-Drive-Flash-Metal/dp/B0C9DS29P3/ref=sr_1_12?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-12
+                    - generic [ref=f2e1547]:
+                      - link [ref=f2e1549] [cursor=pointer]:
+                        - /url: /Amazon-Basics-Drive-Flash-Metal/dp/B0C9DS29P3/ref=sr_1_12?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-12
+                        - heading "Amazon Basics 64 GB USB 2.0 Pen Drive |Flash Drive | with Key Ring (Metal)" [level=2] [ref=f2e1550]
+                      - generic [ref=f2e1551]:
+                        - generic [ref=f2e1552]:
+                          - text: "3.9"
+                          - button "3.9 out of 5 stars, rating details" [ref=f2e1554] [cursor=pointer]:
+                            - generic [ref=f2e1555]: 3.9 out of 5 stars
+                          - link "1,327 ratings" [ref=f2e1558] [cursor=pointer]:
+                            - /url: /Amazon-Basics-Drive-Flash-Metal/dp/B0C9DS29P3/ref=sr_1_12?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-12#customerReviews
+                            - text: (1.3K)
+                        - generic [ref=f2e1559]: 200+ bought in past month
+                      - generic [ref=f2e1562]:
+                        - generic [ref=f2e1563]:
+                          - generic [ref=f2e1565]:
+                            - generic [ref=f2e1566]: Price, product page
+                            - 'link "₹659 M.R.P: ₹1,000 M.R.P: ₹1,000" [ref=f2e1567] [cursor=pointer]':
+                              - /url: /Amazon-Basics-Drive-Flash-Metal/dp/B0C9DS29P3/ref=sr_1_12?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-12
+                              - generic [ref=f2e1568]:
+                                - generic [ref=f2e1569]: ₹659
+                                - generic [ref=f2e1570]: ₹659
+                              - generic [ref=f2e1571]: "M.R.P: ₹1,000"
+                              - generic [ref=f2e1572]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1573]:
+                                  - generic [ref=f2e1574]: ₹1,000
+                                  - text: ₹1,000
+                            - text: (34% off)
+                          - generic [ref=f2e1578]:
+                            - generic [ref=f2e1579]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1580]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1583]:
+                          - generic [ref=f2e1584]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1586]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1601] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1602]
+                          - generic [ref=f2e1603]: Add to cart
+                - listitem [ref=f2e1606]:
+                  - generic [ref=f2e1612]:
+                    - link [ref=f2e1618] [cursor=pointer]:
+                      - /url: /SanDisk-Ultra-064G-I35-SDCZ48-Drive/dp/B00KYK2ABI/ref=sr_1_13?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-13
+                    - generic [ref=f2e1623]:
+                      - link [ref=f2e1625] [cursor=pointer]:
+                        - /url: /SanDisk-Ultra-064G-I35-SDCZ48-Drive/dp/B00KYK2ABI/ref=sr_1_13?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-13
+                        - heading "SanDisk Ultra 64GB, USB 3.0, Flash Drive, Upto 130MB/s R, Pendrive, Black, 5Y Warranty (SDCZ48-064G-I35)" [level=2] [ref=f2e1626]
+                      - generic [ref=f2e1627]:
+                        - generic [ref=f2e1628]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=f2e1630] [cursor=pointer]:
+                            - generic [ref=f2e1631]: 4.3 out of 5 stars
+                          - link "75,363 ratings" [ref=f2e1634] [cursor=pointer]:
+                            - /url: /SanDisk-Ultra-064G-I35-SDCZ48-Drive/dp/B00KYK2ABI/ref=sr_1_13?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-13#customerReviews
+                            - text: (75.3K)
+                        - generic [ref=f2e1635]: 3K+ bought in past month
+                      - generic [ref=f2e1638]:
+                        - generic [ref=f2e1639]:
+                          - generic [ref=f2e1641]:
+                            - generic [ref=f2e1642]: Price, product page
+                            - 'link "₹1,089 M.R.P: ₹1,300 M.R.P: ₹1,300" [ref=f2e1643] [cursor=pointer]':
+                              - /url: /SanDisk-Ultra-064G-I35-SDCZ48-Drive/dp/B00KYK2ABI/ref=sr_1_13?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-13
+                              - generic [ref=f2e1644]:
+                                - generic [ref=f2e1645]: ₹1,089
+                                - generic [ref=f2e1646]: ₹1,089
+                              - generic [ref=f2e1647]: "M.R.P: ₹1,300"
+                              - generic [ref=f2e1648]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1649]:
+                                  - generic [ref=f2e1650]: ₹1,300
+                                  - text: ₹1,300
+                            - text: (16% off)
+                          - generic [ref=f2e1654]:
+                            - generic [ref=f2e1655]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1656]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1659]:
+                          - generic [ref=f2e1660]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1662]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1677] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1678]
+                          - generic [ref=f2e1679]: Add to cart
+                - listitem [ref=f2e1682]:
+                  - generic [ref=f2e1688]:
+                    - generic [ref=f2e1690]:
+                      - group "Best sellerin Pen Drives" [ref=f2e1696]:
+                        - generic "Best seller" [ref=f2e1698]
+                      - link [ref=f2e1702] [cursor=pointer]:
+                        - /url: /SanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD/dp/B0DNFSSF3F/ref=sr_1_14?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-14
+                    - generic [ref=f2e1707]:
+                      - link [ref=f2e1709] [cursor=pointer]:
+                        - /url: /SanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD/dp/B0DNFSSF3F/ref=sr_1_14?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-14
+                        - heading "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [level=2] [ref=f2e1710]
+                      - generic [ref=f2e1711]:
+                        - generic [ref=f2e1712]:
+                          - text: "4.3"
+                          - button "4.3 out of 5 stars, rating details" [ref=f2e1714] [cursor=pointer]:
+                            - generic [ref=f2e1715]: 4.3 out of 5 stars
+                          - link "5,561 ratings" [ref=f2e1718] [cursor=pointer]:
+                            - /url: /SanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD/dp/B0DNFSSF3F/ref=sr_1_14?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-14#customerReviews
+                            - text: (5.5K)
+                        - generic [ref=f2e1719]: 2K+ bought in past month
+                      - generic [ref=f2e1722]:
+                        - generic [ref=f2e1723]:
+                          - generic [ref=f2e1725]:
+                            - generic [ref=f2e1726]: Price, product page
+                            - link "₹2,069" [ref=f2e1727] [cursor=pointer]:
+                              - /url: /SanDisk-usb3-2_gen_1-Pendrive-Warranty-SDDDC3-128G-I46PD/dp/B0DNFSSF3F/ref=sr_1_14?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-14
+                              - generic [ref=f2e1728]:
+                                - generic [ref=f2e1729]: ₹2,069
+                                - generic [ref=f2e1730]: ₹2,069
+                          - generic [ref=f2e1734]:
+                            - generic [ref=f2e1735]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1736]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1739]:
+                          - generic [ref=f2e1740]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1742]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1757] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1758]
+                          - generic [ref=f2e1759]: Add to cart
+                - listitem [ref=f2e1762]:
+                  - generic [ref=f2e1768]:
+                    - link [ref=f2e1774] [cursor=pointer]:
+                      - /url: /HP-v222w-Flash-Drive-64GB/dp/B01LYLJ99X/ref=sr_1_15?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-15
+                    - generic [ref=f2e1779]:
+                      - link [ref=f2e1781] [cursor=pointer]:
+                        - /url: /HP-v222w-Flash-Drive-64GB/dp/B01LYLJ99X/ref=sr_1_15?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-15
+                        - heading "HP v222w 64GB USB 2.0 Pen Drive, Metal Silver" [level=2] [ref=f2e1782]
+                      - generic [ref=f2e1783]:
+                        - generic [ref=f2e1784]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e1786] [cursor=pointer]:
+                            - generic [ref=f2e1787]: 4.2 out of 5 stars
+                          - link "11,899 ratings" [ref=f2e1790] [cursor=pointer]:
+                            - /url: /HP-v222w-Flash-Drive-64GB/dp/B01LYLJ99X/ref=sr_1_15?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-15#customerReviews
+                            - text: (11.8K)
+                        - generic [ref=f2e1791]: 500+ bought in past month
+                      - generic [ref=f2e1794]:
+                        - generic [ref=f2e1795]:
+                          - link "Sale Price Live" [ref=f2e1797] [cursor=pointer]:
+                            - /url: /deals
+                          - generic [ref=f2e1803]:
+                            - generic [ref=f2e1804]: Price, product page
+                            - 'link "₹759 M.R.P: ₹3,099 M.R.P: ₹3,099" [ref=f2e1805] [cursor=pointer]':
+                              - /url: /HP-v222w-Flash-Drive-64GB/dp/B01LYLJ99X/ref=sr_1_15?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-15
+                              - generic [ref=f2e1806]:
+                                - generic [ref=f2e1807]: ₹759
+                                - generic [ref=f2e1808]: ₹759
+                              - generic [ref=f2e1809]: "M.R.P: ₹3,099"
+                              - generic [ref=f2e1810]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1811]:
+                                  - generic [ref=f2e1812]: ₹3,099
+                                  - text: ₹3,099
+                            - text: (76% off)
+                          - generic [ref=f2e1816]:
+                            - generic [ref=f2e1817]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1818]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1821]:
+                          - generic [ref=f2e1822]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1824]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1839] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1840]
+                          - generic [ref=f2e1841]: Add to cart
+                - listitem [ref=f2e1844]:
+                  - generic [ref=f2e1850]:
+                    - link [ref=f2e1856] [cursor=pointer]:
+                      - /url: /OSCOO-Swivel-Portable-Storage-Desktop/dp/B0GTVYD2DW/ref=sr_1_16?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-16
+                    - generic [ref=f2e1861]:
+                      - link [ref=f2e1863] [cursor=pointer]:
+                        - /url: /OSCOO-Swivel-Portable-Storage-Desktop/dp/B0GTVYD2DW/ref=sr_1_16?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-16
+                        - heading "16GB Pen Drive, Flash Drive, Metal Swivel Thumb Drive, Portable USB Storage Drive for Laptop, PC, Desktop, Mac, Car & Office, Silver" [level=2] [ref=f2e1864]
+                      - generic [ref=f2e1865]:
+                        - generic [ref=f2e1866]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=f2e1868] [cursor=pointer]:
+                            - generic [ref=f2e1869]: 4.1 out of 5 stars
+                          - link "24 ratings" [ref=f2e1872] [cursor=pointer]:
+                            - /url: /OSCOO-Swivel-Portable-Storage-Desktop/dp/B0GTVYD2DW/ref=sr_1_16?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-16#customerReviews
+                            - text: (24)
+                        - generic [ref=f2e1873]: 500+ bought in past month
+                      - generic [ref=f2e1876]:
+                        - generic [ref=f2e1877]:
+                          - generic [ref=f2e1879]:
+                            - generic [ref=f2e1880]: Price, product page
+                            - 'link "₹499 M.R.P: ₹799 M.R.P: ₹799" [ref=f2e1881] [cursor=pointer]':
+                              - /url: /OSCOO-Swivel-Portable-Storage-Desktop/dp/B0GTVYD2DW/ref=sr_1_16?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-16
+                              - generic [ref=f2e1882]:
+                                - generic [ref=f2e1883]: ₹499
+                                - generic [ref=f2e1884]: ₹499
+                              - generic [ref=f2e1885]: "M.R.P: ₹799"
+                              - generic [ref=f2e1886]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1887]:
+                                  - generic [ref=f2e1888]: ₹799
+                                  - text: ₹799
+                            - text: (38% off)
+                          - generic [ref=f2e1892]:
+                            - generic [ref=f2e1893]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1894]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1897]:
+                          - generic [ref=f2e1898]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1900]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1915] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1916]
+                          - generic [ref=f2e1917]: Add to cart
+                - listitem [ref=f2e1920]:
+                  - generic [ref=f2e1926]:
+                    - link [ref=f2e1932] [cursor=pointer]:
+                      - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0CPYFKS41/ref=sr_1_17?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-17
+                    - generic [ref=f2e1937]:
+                      - link [ref=f2e1939] [cursor=pointer]:
+                        - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0CPYFKS41/ref=sr_1_17?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-17
+                        - heading "Geonix Pendrive I Silver I USB 2.0 I Keyring Design I Lightweight I Variant 8GB I 5 Years Warranty" [level=2] [ref=f2e1940]
+                      - generic [ref=f2e1941]:
+                        - generic [ref=f2e1942]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e1944] [cursor=pointer]:
+                            - generic [ref=f2e1945]: 4.2 out of 5 stars
+                          - link "1,077 ratings" [ref=f2e1948] [cursor=pointer]:
+                            - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0CPYFKS41/ref=sr_1_17?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-17#customerReviews
+                            - text: (1K)
+                        - generic [ref=f2e1949]: 500+ bought in past month
+                      - generic [ref=f2e1952]:
+                        - generic [ref=f2e1953]:
+                          - link "Limited time deal" [ref=f2e1955] [cursor=pointer]:
+                            - /url: /deals
+                          - generic [ref=f2e1961]:
+                            - generic [ref=f2e1962]: Price, product page
+                            - 'link "₹475 M.R.P: ₹799 M.R.P: ₹799" [ref=f2e1963] [cursor=pointer]':
+                              - /url: /Pendrive-Keyring-Lightweight-Variant-Warranty/dp/B0CPYFKS41/ref=sr_1_17?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-17
+                              - generic [ref=f2e1964]:
+                                - generic [ref=f2e1965]: ₹475
+                                - generic [ref=f2e1966]: ₹475
+                              - generic [ref=f2e1967]: "M.R.P: ₹799"
+                              - generic [ref=f2e1968]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e1969]:
+                                  - generic [ref=f2e1970]: ₹799
+                                  - text: ₹799
+                            - text: (41% off)
+                          - generic [ref=f2e1974]:
+                            - generic [ref=f2e1975]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e1976]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e1979]:
+                          - generic [ref=f2e1980]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e1982]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e1997] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e1998]
+                          - generic [ref=f2e1999]: Add to cart
+                - listitem [ref=f2e2002]:
+                  - generic [ref=f2e2008]:
+                    - link [ref=f2e2014] [cursor=pointer]:
+                      - /url: /HP-712w-64GB-Flash-Drive/dp/B0C9TYS4YF/ref=sr_1_18?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-18
+                    - generic [ref=f2e2019]:
+                      - link [ref=f2e2021] [cursor=pointer]:
+                        - /url: /HP-712w-64GB-Flash-Drive/dp/B0C9TYS4YF/ref=sr_1_18?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-18
+                        - heading "HP 712w 64GB USB 3.2 Flash Drive- Blue" [level=2] [ref=f2e2022]
+                      - generic [ref=f2e2023]:
+                        - generic [ref=f2e2024]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e2026] [cursor=pointer]:
+                            - generic [ref=f2e2027]: 4.2 out of 5 stars
+                          - link "4,385 ratings" [ref=f2e2030] [cursor=pointer]:
+                            - /url: /HP-712w-64GB-Flash-Drive/dp/B0C9TYS4YF/ref=sr_1_18?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-18#customerReviews
+                            - text: (4.3K)
+                        - generic [ref=f2e2031]: 400+ bought in past month
+                      - generic [ref=f2e2034]:
+                        - generic [ref=f2e2035]:
+                          - generic [ref=f2e2037]:
+                            - generic [ref=f2e2038]: Price, product page
+                            - 'link "₹925 M.R.P: ₹1,103 M.R.P: ₹1,103" [ref=f2e2039] [cursor=pointer]':
+                              - /url: /HP-712w-64GB-Flash-Drive/dp/B0C9TYS4YF/ref=sr_1_18?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-18
+                              - generic [ref=f2e2040]:
+                                - generic [ref=f2e2041]: ₹925
+                                - generic [ref=f2e2042]: ₹925
+                              - generic [ref=f2e2043]: "M.R.P: ₹1,103"
+                              - generic [ref=f2e2044]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e2045]:
+                                  - generic [ref=f2e2046]: ₹1,103
+                                  - text: ₹1,103
+                            - text: (16% off)
+                          - generic [ref=f2e2050]:
+                            - generic [ref=f2e2051]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e2052]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e2055]:
+                          - generic [ref=f2e2056]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e2058]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e2073] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e2074]
+                          - generic [ref=f2e2075]: Add to cart
+                - listitem [ref=f2e2078]:
+                  - generic [ref=f2e2084]:
+                    - link [ref=f2e2090] [cursor=pointer]:
+                      - /url: /HP-v236w-16GB-USB-Drive/dp/B01L8ZI7U0/ref=sr_1_19?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-19
+                    - generic [ref=f2e2095]:
+                      - link [ref=f2e2097] [cursor=pointer]:
+                        - /url: /HP-v236w-16GB-USB-Drive/dp/B01L8ZI7U0/ref=sr_1_19?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-19
+                        - heading "HP v236w 16GB USB 2.0 Pen Drive (Multicolour)" [level=2] [ref=f2e2098]
+                      - generic [ref=f2e2099]:
+                        - generic [ref=f2e2100]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e2102] [cursor=pointer]:
+                            - generic [ref=f2e2103]: 4.2 out of 5 stars
+                          - link "12,421 ratings" [ref=f2e2106] [cursor=pointer]:
+                            - /url: /HP-v236w-16GB-USB-Drive/dp/B01L8ZI7U0/ref=sr_1_19?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-19#customerReviews
+                            - text: (12.4K)
+                        - generic [ref=f2e2107]: 500+ bought in past month
+                      - generic [ref=f2e2110]:
+                        - generic [ref=f2e2111]:
+                          - generic [ref=f2e2113]:
+                            - generic [ref=f2e2114]: Price, product page
+                            - 'link "₹899 M.R.P: ₹1,500 M.R.P: ₹1,500" [ref=f2e2115] [cursor=pointer]':
+                              - /url: /HP-v236w-16GB-USB-Drive/dp/B01L8ZI7U0/ref=sr_1_19?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-19
+                              - generic [ref=f2e2116]:
+                                - generic [ref=f2e2117]: ₹899
+                                - generic [ref=f2e2118]: ₹899
+                              - generic [ref=f2e2119]: "M.R.P: ₹1,500"
+                              - generic [ref=f2e2120]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e2121]:
+                                  - generic [ref=f2e2122]: ₹1,500
+                                  - text: ₹1,500
+                            - text: (40% off)
+                          - generic [ref=f2e2126]:
+                            - generic [ref=f2e2127]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e2128]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e2129]: FREE delivery Sun, 4 Oct
+                        - generic [ref=f2e2147] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e2148]
+                          - generic [ref=f2e2149]: Add to cart
+                        - generic [ref=f2e2151]:
+                          - text: More Buying Choices₹609
+                          - link "(5 new offers)" [ref=f2e2153] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B01L8ZI7U0/ref=sr_1_19_olp?keywords=Pen+Drive&dib_tag=se&dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&qid=1790681155&sr=8-19
+                - listitem [ref=f2e2156]:
+                  - generic [ref=f2e2162]:
+                    - link [ref=f2e2168] [cursor=pointer]:
+                      - /url: /128GB-Flash-Drive-Adapter-Metal/dp/B0HJX4MZYZ/ref=sr_1_20?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-20
+                    - generic [ref=f2e2173]:
+                      - generic [ref=f2e2174]:
+                        - link [ref=f2e2175] [cursor=pointer]:
+                          - /url: /128GB-Flash-Drive-Adapter-Metal/dp/B0HJX4MZYZ/ref=sr_1_20?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-20
+                          - heading "128GB USB Flash Drive with Free OTG Adapter, Metal Body" [level=2] [ref=f2e2176]
+                        - generic "Type-C OTG Included, Keyring Loop Design, Plug and Play, Compact and Portable, Data Storage" [ref=f2e2178]
+                      - generic [ref=f2e2181]:
+                        - generic [ref=f2e2182]:
+                          - generic [ref=f2e2184]:
+                            - generic [ref=f2e2185]: Price, product page
+                            - 'link "₹589 ( ₹29,450 /100 g) M.R.P: ₹1,499 M.R.P: ₹1,499" [ref=f2e2186] [cursor=pointer]':
+                              - /url: /128GB-Flash-Drive-Adapter-Metal/dp/B0HJX4MZYZ/ref=sr_1_20?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-20
+                              - generic [ref=f2e2187]:
+                                - generic [ref=f2e2188]: ₹589
+                                - generic [ref=f2e2189]: ₹589
+                              - generic [ref=f2e2190]:
+                                - text: (
+                                - generic [ref=f2e2191]:
+                                  - generic [ref=f2e2192]: ₹29,450
+                                  - text: ₹29,450
+                                - text: /100 g)
+                              - generic [ref=f2e2193]: "M.R.P: ₹1,499"
+                              - generic [ref=f2e2194]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e2195]:
+                                  - generic [ref=f2e2196]: ₹1,499
+                                  - text: ₹1,499
+                            - text: (61% off)
+                          - generic [ref=f2e2200]:
+                            - generic [ref=f2e2201]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e2202]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e2203]: FREE delivery Mon, 5 Oct
+                        - generic [ref=f2e2223] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e2224]
+                          - generic [ref=f2e2225]: Add to cart
+                - listitem [ref=f2e2228]:
+                  - generic [ref=f2e2234]:
+                    - link [ref=f2e2240] [cursor=pointer]:
+                      - /url: /Digitek-64GB-2-0-Temperature-Compatible/dp/B0DTQ26V39/ref=sr_1_21?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-21
+                    - generic [ref=f2e2245]:
+                      - link [ref=f2e2247] [cursor=pointer]:
+                        - /url: /Digitek-64GB-2-0-Temperature-Compatible/dp/B0DTQ26V39/ref=sr_1_21?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-21
+                        - heading "Digitek Dud 64GB USB 2.0 Flash Drive, High-Speed Read & Write Pen Drive, Magnetic, X-Ray & Temperature Resistant, Compatible with Windows & Mac OS, Portable Data Storage" [level=2] [ref=f2e2248]
+                      - generic [ref=f2e2250]:
+                        - text: "3.9"
+                        - button "3.9 out of 5 stars, rating details" [ref=f2e2252] [cursor=pointer]:
+                          - generic [ref=f2e2253]: 3.9 out of 5 stars
+                        - link "144 ratings" [ref=f2e2256] [cursor=pointer]:
+                          - /url: /Digitek-64GB-2-0-Temperature-Compatible/dp/B0DTQ26V39/ref=sr_1_21?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-21#customerReviews
+                          - text: (144)
+                      - generic [ref=f2e2259]:
+                        - generic [ref=f2e2260]:
+                          - generic [ref=f2e2262]:
+                            - generic [ref=f2e2263]: Price, product page
+                            - 'link "₹599 M.R.P: ₹695 M.R.P: ₹695" [ref=f2e2264] [cursor=pointer]':
+                              - /url: /Digitek-64GB-2-0-Temperature-Compatible/dp/B0DTQ26V39/ref=sr_1_21?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-21
+                              - generic [ref=f2e2265]:
+                                - generic [ref=f2e2266]: ₹599
+                                - generic [ref=f2e2267]: ₹599
+                              - generic [ref=f2e2268]: "M.R.P: ₹695"
+                              - generic [ref=f2e2269]:
+                                - text: "M.R.P:"
+                                - generic [ref=f2e2270]:
+                                  - generic [ref=f2e2271]: ₹695
+                                  - text: ₹695
+                            - text: (14% off)
+                          - generic [ref=f2e2275]:
+                            - generic [ref=f2e2276]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e2277]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e2278]: FREE delivery Sun, 4 Oct
+                        - generic [ref=f2e2296] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e2297]
+                          - generic [ref=f2e2298]: Add to cart
+                - listitem [ref=f2e2301]:
+                  - generic [ref=f2e2307]:
+                    - link [ref=f2e2313] [cursor=pointer]:
+                      - /url: /SanDisk-Cruzer-Blade-SDCZ50-008G-I35-Drive/dp/B002U28LZC/ref=sr_1_22?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-22
+                    - generic [ref=f2e2318]:
+                      - link [ref=f2e2320] [cursor=pointer]:
+                        - /url: /SanDisk-Cruzer-Blade-SDCZ50-008G-I35-Drive/dp/B002U28LZC/ref=sr_1_22?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-22
+                        - heading "SanDisk Cruzer Blade SDCZ50-008G-I35 8GB USB 2.0 Pen Drive" [level=2] [ref=f2e2321]
+                      - generic [ref=f2e2322]:
+                        - generic [ref=f2e2323]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=f2e2325] [cursor=pointer]:
+                            - generic [ref=f2e2326]: 4.2 out of 5 stars
+                          - link "24,321 ratings" [ref=f2e2329] [cursor=pointer]:
+                            - /url: /SanDisk-Cruzer-Blade-SDCZ50-008G-I35-Drive/dp/B002U28LZC/ref=sr_1_22?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-22#customerReviews
+                            - text: (24.3K)
+                        - generic [ref=f2e2330]: 500+ bought in past month
+                      - generic [ref=f2e2333]:
+                        - generic [ref=f2e2334]:
+                          - generic [ref=f2e2336]:
+                            - generic [ref=f2e2337]: Price, product page
+                            - link "₹599" [ref=f2e2338] [cursor=pointer]:
+                              - /url: /SanDisk-Cruzer-Blade-SDCZ50-008G-I35-Drive/dp/B002U28LZC/ref=sr_1_22?dib=eyJ2IjoiMSJ9.P2GsOyMkVXpcmf95FquvqsQGphj-o_-J6zVOghI7nfR2EDgPxKApj6Z58IXTnMFVo8SfVIBAQAGDVJmhMh0dDOald2gKDJgQYJ7vEKfrMW31YSYwhDCEOh63zyD4qMvdHC4iRGGo2Qq4XaTOid4RI8LcQ96G5fOelDjZMPMOaQxPEzZ9RQNq5abL3pz1beeBrkdo0JykKyofDw_j9v2pTWuciSqxcX5V-_vL7ea2cqs.oulg3qJNMcuwRYUH99yQUV-3nWTJd7q9FeET4N8e6B8&dib_tag=se&keywords=Pen+Drive&qid=1790681155&sr=8-22
+                              - generic [ref=f2e2339]:
+                                - generic [ref=f2e2340]: ₹599
+                                - generic [ref=f2e2341]: ₹599
+                          - generic [ref=f2e2345]:
+                            - generic [ref=f2e2346]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=f2e2347]: Up to 5% back with Amazon Pay ICICI c...
+                        - generic [ref=f2e2350]:
+                          - generic [ref=f2e2351]: FREE delivery Thu, 1 Oct
+                          - generic [ref=f2e2353]: Or fastest delivery Tomorrow, 30 Sept
+                        - generic [ref=f2e2368] [cursor=pointer]:
+                          - button "Add to cart" [ref=f2e2369]
+                          - generic [ref=f2e2370]: Add to cart
+          - generic [ref=f2e2378]:
+            - generic "Related searches in Pen Drive" [ref=f2e2379]:
+              - heading "Related searches" [level=2] [ref=f2e2382]
+            - list [ref=f2e2384]:
+              - generic [ref=f2e2385]:
+                - listitem [ref=f2e2386]:
+                  - link "pendrive 128gb usb" [ref=f2e2388] [cursor=pointer]:
+                    - /url: /s?k=pendrive+128gb+usb&ref=rsl_sug_0_0&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+                - listitem [ref=f2e2394]:
+                  - link "pendrive 16gb" [ref=f2e2396] [cursor=pointer]:
+                    - /url: /s?k=pendrive+16gb&ref=rsl_sug_0_3&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+              - generic [ref=f2e2402]:
+                - listitem [ref=f2e2403]:
+                  - link "pendrive 256 gb" [ref=f2e2405] [cursor=pointer]:
+                    - /url: /s?k=pendrive+256+gb&ref=rsl_sug_0_1&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+                - listitem [ref=f2e2411]:
+                  - link "memory card" [ref=f2e2413] [cursor=pointer]:
+                    - /url: /s?k=memory+card&ref=rsl_sug_0_4&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+              - generic [ref=f2e2419]:
+                - listitem [ref=f2e2420]:
+                  - link "hard disk" [ref=f2e2422] [cursor=pointer]:
+                    - /url: /s?k=hard+disk&ref=rsl_sug_0_2&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+                - listitem [ref=f2e2428]:
+                  - link "pendrive type c" [ref=f2e2430] [cursor=pointer]:
+                    - /url: /s?k=pendrive+type+c&ref=rsl_sug_0_5&pd_rd_w=ITHza&content-id=amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01:amzn1.sym.c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_p=c6a4c27a-40f0-4447-9435-8e917ffa1d01&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=PBVEN&pd_rd_r=1d820fd1-32bd-4483-a061-fb2f82f7f3e8&qid=1790681155
+          - navigation "pagination" [ref=f2e2438]:
+            - list [ref=f2e2440]:
+              - listitem [ref=f2e2441]:
+                - button "Previous" [disabled] [ref=f2e2443]
+              - listitem [ref=f2e2446]:
+                - button "Page 1" [ref=f2e2448]: "1"
+              - listitem [ref=f2e2449]:
+                - button "Go to page 2" [ref=f2e2451] [cursor=pointer]: "2"
+              - listitem [ref=f2e2452]:
+                - button "Go to page 3" [ref=f2e2454] [cursor=pointer]: "3"
+              - button [disabled] [ref=f2e2455]:
+                - img [ref=f2e2456]: ...
+              - button "20" [disabled] [ref=f2e2458]
+              - listitem [ref=f2e2459]:
+                - button "Go to next page, page 2" [ref=f2e2461] [cursor=pointer]: Next
+          - generic [ref=f2e2467]:
+            - separator [ref=f2e2468]
+            - generic [ref=f2e2469]:
+              - heading "Brands related to your search" [ref=f2e2470]
+              - button "Leave feedback on Sponsored ad" [ref=f2e2475] [cursor=pointer]: Sponsored
+              - generic [ref=f2e2479]:
+                - generic [ref=f2e2481]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                      - link [ref=f2e2482] [cursor=pointer]:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_ls&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                        - img "Official brand Page" [ref=f2e2483]
+                      - generic [ref=f2e2485]:
+                        - generic [ref=f2e2486]:
+                          - link [ref=f2e2487] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link [ref=f2e2488] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_logo&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - img "Official brand Page" [ref=f2e2490]
+                        - generic [ref=f2e2491]:
+                          - link [ref=f2e2492] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link "FEDUS USB 3.0 Extension Cable" [ref=f2e2493] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUL1u00AAVlsBJYCIMhQpE4pEhqqXnO1zbEeykP-Spm5cK07akuV0sS-xaWI7d9cEeAMmnoABxM7EjsQz8AbMPAMKAgbW70ffTyU-_Pb15_e7tUeWLI3PRpNJgPz-ZWNPOj6a0zx7hQOXEWeq--V0zZb9ZNE9ejk8K3ztNBxNHPIiydfbK2eTLkYPZNRpoU5Llltwuh_Zs0PLG596o0FUe1K5l1B-I4qy9nASjDznoh8Mpp5bf7tXOdwxeCbmtftkRd4UeSvL689STgCjcbFa0TwhIitywCnbZDEFnBIWp2Am5o07NMeD4Fhe3S5FBmaM5AmIGSUi21DwJxHEhCUclCTLBWUgLnJBcyFXh7aDlTA6x64X-eOLsKFX9mD1x7uPn7-8d-vVv-5dEaXky8ZjBUIIkWIYCMma0pEPBsGoe-CEznGtXnUW3rZ_tomtzHFZikz5037lw34qRMm77fZ2u239G9fmomCUt0uyoG3HVTXZszXQU1UboI7cAbbVMwBSVeQYiqbblvf8twEzOjcjG1tQVSSk6_2B4UQwtFQrtIEFVU3RFEO5nEpwANVLze8Nm2WCWYLLZZowUzRTTnDMcJaYsLksMeFZzk0b9s4lPfCvrk5saBuSZPTH6okN9d61dB0ifadc31L22gxp_tRl2YbuIL4shPn_RU2elJgkeMGK29Lc3SXLhirpGjQU1MxMUvIm2a24CSN_NRSJuv4F3Q_IOw&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FCD572EB7-F55B-4626-BAF9-4554C9378BAE%3Fstore_ref%3DSB_A0531488GI9CS0PA5APB-A05737393VZ10I05V7KFM%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB0FL18NKWW%2CB0B9119GT5%2CB08FX1XP48%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300022951870934%26i%3Daps%26aref%3DkPSKmMtd5q&ref_=sbx_be_s_3psl_mbd_mb0_hl&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - generic [ref=f2e2495]:
+                              - generic [ref=f2e2496]: FEDUS USB 3.0 Extension Cable
+                              - generic [ref=f2e2497]: FEDUS USB 3.0 Extension Cable
+                - generic [ref=f2e2499]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                      - link [ref=f2e2500] [cursor=pointer]:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_ls&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                        - img "Seagate" [ref=f2e2501]
+                      - generic [ref=f2e2503]:
+                        - generic [ref=f2e2504]:
+                          - link [ref=f2e2505] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link [ref=f2e2506] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_logo&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - img "Seagate" [ref=f2e2508]
+                        - generic [ref=f2e2509]:
+                          - link [ref=f2e2510] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link "4TB HDD With Password & 3 yr Data Recovery Service" [ref=f2e2511] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdUMuu0kAAzeX6QHyEsLg3YWVIZEEcaKdvksaUoeEC2sujEGEzGdoBRkvbOzMX1D_wA0yMX2PiyoUbE_0M9-4MRl24OzknJ-dRioqfPv74dqty34NqOJjMZoE-7M1rJ2rjbE1T9goHXU7Q0h7myyue9OJN-2w213QUZv74hb7vXY1DhhJ6uZnchbrZ1M0mhE1lWZh2VkXPDy_8SX9aOS_djql4KbO8cm8WTHx02Qv6S79bfXtSKh4VvJLryh2yI2-ytMnS6qOtIIDTKNvtaBoTybIUCMr3LKJAUMKjLVjJde0mTXE_aMDddSIZWHGSxiDilEi2p-BPIogIjwXICUsl5SDKUklTCcvPOghro-lT3PWnw_ByVLNKJ2r5w5ev339-vlEt_3Ufi2i5SGoPoKKojmVbjm7ajg1P-8GkfYpGqFGpltHGP_QG-8hjqMu3ugvfF0rvClspc9FutQ6HQ_PftpaQGaeilZMNbRkd04PIUQEyDAh0x0LA6Sg-MAzHR4bueaqiPvltwJyu3WkHe4pqmhrU5oPpsB_oYziEGvAUwzAVy9a0xWJwoYZItcxuPY8xj3GebGPuyvpWEBxxzGJXqSc5JoKlwu0ojj5-Pg-t8eMjnKiLuWkf5atryl-7I5o-7HK2p0dKJJl0_7-lLuIckxhveHadu1BRDM3RHdsxVceuM5fkok6OzRE9rOHCnEH_F-F1xLM&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2F5B6A2C91-C552-497C-9B0E-559EC54AA101%3Fstore_ref%3DSB_A0166323VJSKIN4Q2K23-A055607833YYJH1TC176D%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_asins%3DB094QXVT7Q%2CB094R1YV68%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D20053949896198%26i%3Daps%26aref%3DCewf2Y6U2E&ref_=sbx_be_s_3psl_mbd_mb1_hl&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - generic [ref=f2e2513]:
+                              - generic [ref=f2e2514]: 4TB HDD With Password & 3 yr Data Recovery Service
+                              - generic [ref=f2e2515]: 4TB HDD With Password & 3 yr Data Recovery Service
+                - generic [ref=f2e2517]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                      - link [ref=f2e2518] [cursor=pointer]:
+                        - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_ls&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                        - img "iTHRIVE Essentials" [ref=f2e2519]
+                      - generic [ref=f2e2521]:
+                        - generic [ref=f2e2522]:
+                          - link [ref=f2e2523] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link [ref=f2e2524] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_logo&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - img "iTHRIVE Essentials" [ref=f2e2526]
+                        - generic [ref=f2e2527]:
+                          - link [ref=f2e2528] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_bkgd&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                          - link "Get your essentials today." [ref=f2e2529] [cursor=pointer]:
+                            - /url: https://sponsored-ads.amazon.in/clk/?_encoding=UTF8&p=eAFdj8-O0kAAxoMbFVEj4bCbcDIkciAZmGmH0pI0prQDy7JbWP5otpfJ0A7QFdruzAC6D2DiW_gEPoOJr6B3n8CjMfFiMOrB6_fly_f7FcL8p4_fvtwrPXY0ND0bz2Y-HvReVHKodrzgSfya-p5gbmAOsuBGrHvRsn3sWLuX10HQlAJdDi_I9cASTe9y_FDDRh0bdU2rw-DOpDPPO2R6Ssb9SemkcD_i8pVKs9KjmT8m7rDn9wPild_lCvlDQ-dqUXrANuw2TepxUn62kgwIHqabDU8ipuI0AZKLXRxyIDkT4QrM1aJylye079e0zXatYjAXLIlAKDhT8Y6DP48gZCKSIGNxorgAYZooniiteNFxqT6anFOPTAbT4ahiFnJa8fPX99_ffvDKxb_rA4ieyXXliQ4hxC2kt6CBsG5oR31_3D5yR26tVC66S7Lvne1CJ3Y9scK29jNX-JFbKZXJdqOx3-_r_-QaUqWCy0bGlrzRtYje7RgWwNCAAHs6AZ1uCwHoOU2XtBzYdIznvwdU8IU96VAHYmQgE2lX_lULk_OxZpEucKBumBhhzfS8wPRPncDvWtUsoiKi2XoVCVtVV5LRUNA4smF1ndGbLRdv7BFPnnoi3vFDJNepsv83r8oooyyiS5FuM1uHECHDxBaCFtZxNbZZJqvsADe73Vxubxjxu78ARFS9XA&v=c1&r=https%3A%2F%2Fwww.amazon.in%2Fstores%2Fpage%2FF9E3FB69-4060-4D3E-BF71-0DA5CE7A05A6%3Fstore_ref%3DSB_A04161812YNY74ELR29EF-A036841428DDZ8NHAZNF9%26pd_rd_plhdr%3Dt%26hsa_cr_id%3D0%26lp_query%3DPen%20Drive%26lp_slot%3Ddesktop-hsa-3psl%26sdp_ad_group%3D300116849109434%26i%3Daps%26aref%3DUzmQuqaENF&ref_=sbx_be_s_3psl_mbd_mb2_hl&pd_rd_w=QUHXY&content-id=amzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892%3Aamzn1.sym.e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_p=e3b1209d-74b7-4fc9-bd01-2d594919a892&pf_rd_r=ZJBH5FFJGWXVYY9VKTM0&pd_rd_wg=cSlAj&pd_rd_r=ca2fb468-9a8b-4917-b264-dfa465c0231d
+                            - generic [ref=f2e2531]:
+                              - generic [ref=f2e2532]: Get your essentials today.
+                              - generic [ref=f2e2533]: Get your essentials today.
+          - generic [ref=f2e2539]:
+            - heading "Need help?" [level=2] [ref=f2e2542]
+            - generic [ref=f2e2543]:
+              - link "Visit the help section" [ref=f2e2544] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201889520
+              - text: or
+              - link "contact us" [ref=f2e2545] [cursor=pointer]:
+                - /url: /gp/help/customer/contact-us
+          - generic [ref=f2e2548]:
+            - iframe [ref=f2e2549]:
+              - generic [ref=f3e4]:
+                - link "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [ref=f3e7] [cursor=pointer]:
+                  - /url: https://aax-eu-zaz.amazon.in/x/c/RKo5G9Fm6ufOPJs35hnXg7kAAAGg7OoIcAoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICDO2KcO/clv1c_ek8OM3GX57OOBXc7_aNgTd6kvQINoDkANmQH8QbyxRpBwEZY6TFAPqHYAHc_-T9X--edcCDxWeucYod1TAGYM0KOBpCweEPS_o9zKD-gdlpwmse9-_Kf8GSfuR6W8pn3VpNLbIlvIl-AijNKJZUluFzvVTXqbr1j06Yw64002aIOXQpJOZXXhQbcLfqMLUmNHpZ4bDk4rQ1lYW6Ju_x0P-HpFjIziLoDICNMZTUK7uyFzJ6kocrYBagTZOGCJ0TfnufwzsfVpn2KyC_4pf9rFqZIwg3H2Odl-n0ugx4E0LwC1GnKSMxJB1qd9KSu9doiqI-VM-VituJ02dWUhA0yO0zx6B_yrri2lVIQWFDpEJmPCoqZ5TDMXgG-kYVDLHNn7L0qChmbFpmfhXI/https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxMTg3NjE3NzQ0MzMxMjg0OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2Zvb3Rlcl9zaGFyZWQ6MzAwNDU1NjMxODM2MzMyOjo6Og&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_bot_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfZm9vdGVyX3NoYXJlZA&aref=4If3zYQru4&sp_cr=ZAZ
+                - generic [ref=f3e8]:
+                  - img "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [ref=f3e10]
+                  - generic [ref=f3e11]:
+                    - generic [ref=f3e12]: SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty...
+                    - generic [ref=f3e13]:
+                      - text: ₹2,069.00
+                      - link "5,561" [ref=f3e14] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/RKo5G9Fm6ufOPJs35hnXg7kAAAGg7OoIcAoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICDO2KcO/clv1c_ek8OM3GX57OOBXc7_aNgTd6kvQINoDkANmQH8QbyxRpBwEZY6TFAPqHYAHc_-T9X--edcCDxWeucYod1TAGYM0KOBpCweEPS_o9zKD-gdlpwmse9-_Kf8GSfuR6W8pn3VpNLbIlvIl-AijNKJZUluFzvVTXqbr1j06Yw64002aIOXQpJOZXXhQbcLfqMLUmNHpZ4bDk4rQ1lYW6Ju_x0P-HpFjIziLoDICNMZTUK7uyFzJ6kocrYBagTZOGCJ0TfnufwzsfVpn2KyC_4pf9rFqZIwg3H2Odl-n0ugx4E0LwC1GnKSMxJB1qd9KSu9doiqI-VM-VituJ02dWUhA0yO0zx6B_yrri2lVIQWFDpEJmPCoqZ5TDMXgG-kYVDLHNn7L0qChmbFpmfhXI/https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxMTg3NjE3NzQ0MzMxMjg0OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2Zvb3Rlcl9zaGFyZWQ6MzAwNDU1NjMxODM2MzMyOjo6Og&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_bot_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfZm9vdGVyX3NoYXJlZA&aref=4If3zYQru4&sp_cr=ZAZ#customerReviews
+                  - link "Shop now" [ref=f3e18] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RKo5G9Fm6ufOPJs35hnXg7kAAAGg7OoIcAoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICDO2KcO/clv1c_ek8OM3GX57OOBXc7_aNgTd6kvQINoDkANmQH8QbyxRpBwEZY6TFAPqHYAHc_-T9X--edcCDxWeucYod1TAGYM0KOBpCweEPS_o9zKD-gdlpwmse9-_Kf8GSfuR6W8pn3VpNLbIlvIl-AijNKJZUluFzvVTXqbr1j06Yw64002aIOXQpJOZXXhQbcLfqMLUmNHpZ4bDk4rQ1lYW6Ju_x0P-HpFjIziLoDICNMZTUK7uyFzJ6kocrYBagTZOGCJ0TfnufwzsfVpn2KyC_4pf9rFqZIwg3H2Odl-n0ugx4E0LwC1GnKSMxJB1qd9KSu9doiqI-VM-VituJ02dWUhA0yO0zx6B_yrri2lVIQWFDpEJmPCoqZ5TDMXgG-kYVDLHNn7L0qChmbFpmfhXI/https://www.amazon.in/sspa/click?ie=UTF8&spc=MToxMTg3NjE3NzQ0MzMxMjg0OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2Zvb3Rlcl9zaGFyZWQ6MzAwNDU1NjMxODM2MzMyOjo6Og&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_bot_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfZm9vdGVyX3NoYXJlZA&aref=4If3zYQru4&sp_cr=ZAZ
+            - button "Leave feedback on Sponsored advertisement" [ref=f2e2551] [cursor=pointer]:
+              - generic [ref=f2e2552]: Sponsored
+        - link "Go back to filtering menu" [ref=f2e2554] [cursor=pointer]:
+          - /url: "#s-skipLinkTargetForFilterOptions"
+      - dialog "Filters" [ref=f2e2555]:
+        - generic [ref=f2e2556]:
+          - link "Skip to main search results" [ref=f2e2557] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=f2e2559]:
+            - generic [ref=f2e2563]:
+              - group [ref=f2e2564]:
+                - heading "Popular Shopping Ideas" [level=2] [ref=f2e2565]
+                - list [ref=f2e2566]:
+                  - listitem [ref=f2e2567]:
+                    - link "128gb" [ref=f2e2569] [cursor=pointer]:
+                      - /url: /s?k=pen+drive+128+gb&ref=sr_nr_p_rag_integrated_qb_0
+                  - listitem [ref=f2e2570]:
+                    - link "256gb" [ref=f2e2572] [cursor=pointer]:
+                      - /url: /s?k=pen+drive+256+gb&ref=sr_nr_p_rag_integrated_qb_1
+                  - listitem [ref=f2e2573]:
+                    - link "512gb" [ref=f2e2575] [cursor=pointer]:
+                      - /url: /s?k=pen+drive+512+gb&ref=sr_nr_p_rag_integrated_qb_2
+                  - listitem [ref=f2e2576]:
+                    - link "32gb Usb 3.0" [ref=f2e2578] [cursor=pointer]:
+                      - /url: /s?k=pen+drive+32+gb+3.0&ref=sr_nr_p_rag_integrated_qb_3
+                  - listitem [ref=f2e2579]:
+                    - button "See more" [ref=f2e2582] [cursor=pointer]
+              - separator [ref=f2e2584]
+              - group [ref=f2e2585]:
+                - heading "Eligible for Free Delivery" [level=2] [ref=f2e2586]
+                - list "Eligible for Free Delivery" [ref=f2e2587]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2588]:
+                    - link "Apply the filter Free Shipping to narrow results" [ref=f2e2590] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_free_shipping_eligible%3A205563695031&dc&qid=1790681155&rnid=205563694031&ref=sr_nr_p_n_free_shipping_eligible_1&ds=v1%3Ao5bL645fi07xHqbUhmh4rA4jHltUvxB2t%2BmBZR9oKyA
+                      - checkbox [ref=f2e2593]
+                      - text: Free Shipping
+                      - generic [ref=f2e2595]: Get FREE Shipping on eligible orders shipped by Amazon
+              - group [ref=f2e2596]:
+                - heading "Storage Capacity" [level=2] [ref=f2e2597]
+                - list "Storage Capacity" [ref=f2e2598]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2599]:
+                    - link "Apply the filter Up to 15,899 to narrow results" [ref=f2e2601] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462307031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_1&ds=v1%3A4sklvAwOUJqW%2BfTcmnF10VAf5f4x1o%2Fbe%2FXeCmeeqHU
+                      - checkbox [ref=f2e2604]
+                      - text: Up to 15,899
+                  - listitem "Popular Shopping Ideas" [ref=f2e2606]:
+                    - link "Apply the filter 15,900 to 23,999 to narrow results" [ref=f2e2608] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462300031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_2&ds=v1%3AerI2olWn%2BElRxuWh1FBHWYKoPv0uI8%2F%2FARLVdqPIxDU
+                      - checkbox [ref=f2e2611]
+                      - text: 15,900 to 23,999
+                  - listitem "Popular Shopping Ideas" [ref=f2e2613]:
+                    - link "Apply the filter 24,000 to 32,099 to narrow results" [ref=f2e2615] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462306031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_3&ds=v1%3AoP6DlDtsoVGkgn%2ByL%2BVcHVlCFBf88o7AWkohITL4bDo
+                      - checkbox [ref=f2e2618]
+                      - text: 24,000 to 32,099
+                  - listitem "Popular Shopping Ideas" [ref=f2e2620]:
+                    - link "Apply the filter 32,100 & above to narrow results" [ref=f2e2622] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462302031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_4&ds=v1%3Aqk5sWkeLyux7XqhoFhBmz0DZ%2BHVkL0jxusgHLZtjOxA
+                      - checkbox [ref=f2e2625]
+                      - text: 32,100 & above
+                  - listitem "Popular Shopping Ideas" [ref=f2e2627]:
+                    - link "Apply the filter Up to 14 GB to narrow results" [ref=f2e2629] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462304031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_5&ds=v1%3Ag1%2BmCV6JOHxreRHFrAuHv%2Bq4kaIvg5wBLB%2Fk%2FKYpCzI
+                      - checkbox [ref=f2e2632]
+                      - text: Up to 14 GB
+                  - listitem "Popular Shopping Ideas" [ref=f2e2634]:
+                    - link "Apply the filter 15 to 24 GB to narrow results" [ref=f2e2636] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462303031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_6&ds=v1%3AD%2Fpltk51KsmGRtNgVAzqholXLE70c34j8TO6s9deVTI
+                      - checkbox [ref=f2e2639]
+                      - text: 15 to 24 GB
+                  - listitem "Popular Shopping Ideas" [ref=f2e2641]:
+                    - link "Apply the filter 25 to 34 GB to narrow results" [ref=f2e2643] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017154182111%3A215462305031&dc&qid=1790681155&rnid=215462299031&ref=sr_nr_p_n_g-101017154182111_7&ds=v1%3AkzcTP5fml%2B6aKcYqyqcwN7aYYXaGYD0XlYZhNiM8Qg8
+                      - checkbox [ref=f2e2646]
+                      - text: 25 to 34 GB
+                  - listitem [ref=f2e2648]:
+                    - button "See more, Storage Capacity" [ref=f2e2651] [cursor=pointer]: See more
+              - group [ref=f2e2653]:
+                - heading "Brands" [level=2] [ref=f2e2654]
+                - list "Brands" [ref=f2e2655]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2656]:
+                    - link "Apply the filter SanDisk to narrow results" [ref=f2e2658] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A110452&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_1&ds=v1%3AhiID0KgCGBJWgaHuK%2BMJPAU2AdexAY%2FyiDjIaL%2BjER0
+                      - checkbox [ref=f2e2661]
+                      - text: SanDisk
+                  - listitem "Popular Shopping Ideas" [ref=f2e2663]:
+                    - link "Apply the filter HP to narrow results" [ref=f2e2665] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A308445&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_2&ds=v1%3A1ueqrPjzzt1aqyyWWnsqOsExCYliGD4Rk3UuH3XPDFw
+                      - checkbox [ref=f2e2668]
+                      - text: HP
+                  - listitem "Popular Shopping Ideas" [ref=f2e2670]:
+                    - link "Apply the filter amazon basics to narrow results" [ref=f2e2672] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A234478&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_3&ds=v1%3ArScyDleAWRTrAszZpGSf2iAiX%2B5toPdtY49FZ14LTW0
+                      - checkbox [ref=f2e2675]
+                      - text: amazon basics
+                  - listitem "Popular Shopping Ideas" [ref=f2e2677]:
+                    - link "Apply the filter Acer to narrow results" [ref=f2e2679] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A247341&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_4&ds=v1%3AAJkl%2FVcrpoqJRhZM9e6f2GLerjlH7G0OJhM2wdFear4
+                      - checkbox [ref=f2e2682]
+                      - text: Acer
+                  - listitem "Popular Shopping Ideas" [ref=f2e2684]:
+                    - link "Apply the filter HIKVISION to narrow results" [ref=f2e2686] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A315198&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_5&ds=v1%3ARgH2%2F4FjOpVycIAfCBPPl%2FE9Brut8lO6Tazy%2FQsnBzA
+                      - checkbox [ref=f2e2689]
+                      - text: HIKVISION
+                  - listitem "Popular Shopping Ideas" [ref=f2e2691]:
+                    - link "Apply the filter KEXIN to narrow results" [ref=f2e2693] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A244638&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_6&ds=v1%3AFnXz5u5hq0oZ%2BL4P%2FR3xBlDu8iliKOGJNcltX6znHis
+                      - checkbox [ref=f2e2696]
+                      - text: KEXIN
+                  - listitem "Popular Shopping Ideas" [ref=f2e2698]:
+                    - link "Apply the filter Lexar to narrow results" [ref=f2e2700] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_123%3A324661&dc&qid=1790681155&rnid=91049095031&ref=sr_nr_p_123_7&ds=v1%3AILm3XSUDqfDo5F2aN5dSdWSI95eBPO6nOlJP4Kbg4%2FY
+                      - checkbox [ref=f2e2703]
+                      - text: Lexar
+                  - listitem [ref=f2e2705]:
+                    - button "See more, Brands" [ref=f2e2708] [cursor=pointer]: See more
+              - group [ref=f2e2710]:
+                - heading "Hardware Interface" [level=2] [ref=f2e2711]
+                - list "Hardware Interface" [ref=f2e2712]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2713]:
+                    - link "Apply the filter USB 2.0 to narrow results" [ref=f2e2715] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230660031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_1&ds=v1%3Au%2B29QokyeWBgJgAjRGr1tJ0yLgmbAwV5ZwnI8Ch4pCU
+                      - checkbox [ref=f2e2718]
+                      - text: USB 2.0
+                  - listitem "Popular Shopping Ideas" [ref=f2e2720]:
+                    - link "Apply the filter USB to narrow results" [ref=f2e2722] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230656031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_2&ds=v1%3A%2Bzg70oBdnApwdOYxCYwHChLPuzYAPdim62odUYcbxCo
+                      - checkbox [ref=f2e2725]
+                      - text: USB
+                  - listitem "Popular Shopping Ideas" [ref=f2e2727]:
+                    - link "Apply the filter USB 3.0 to narrow results" [ref=f2e2729] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230661031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_3&ds=v1%3ALeuKnSzcT1UW4JUx4%2FmVbnPkkJdnRBjEHQ%2FEvZXz8Nc
+                      - checkbox [ref=f2e2732]
+                      - text: USB 3.0
+                  - listitem "Popular Shopping Ideas" [ref=f2e2734]:
+                    - link "Apply the filter Lightning to narrow results" [ref=f2e2736] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230663031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_4&ds=v1%3AAFBAhPrnRdiBbY6P5nQ1aZ1foQw0Y8Mh905ez8KsHg8
+                      - checkbox [ref=f2e2739]
+                      - text: Lightning
+                  - listitem "Popular Shopping Ideas" [ref=f2e2741]:
+                    - link "Apply the filter USB 3.2 Gen 1 to narrow results" [ref=f2e2743] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230658031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_5&ds=v1%3Aw8RHi25RhpIlSXb9ArUvU8LeCLnxwQnpyprj0lAp4Uo
+                      - checkbox [ref=f2e2746]
+                      - text: USB 3.2 Gen 1
+                  - listitem "Popular Shopping Ideas" [ref=f2e2748]:
+                    - link "Apply the filter USB 3.2 Gen 2 to narrow results" [ref=f2e2750] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230655031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_6&ds=v1%3A%2Fo5JJTwb4rkvLlDmdSoYB2OG2hRHGQI73%2Fgmd9XholM
+                      - checkbox [ref=f2e2753]
+                      - text: USB 3.2 Gen 2
+                  - listitem "Popular Shopping Ideas" [ref=f2e2755]:
+                    - link "Apply the filter USB 1.1 to narrow results" [ref=f2e2757] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003556618111%3A60230662031&dc&qid=1790681155&rnid=60230653031&ref=sr_nr_p_n_g-1003556618111_7&ds=v1%3AotW0nFeI5vfeoGlbbF7QIVUet44SEd5VT3b4IHQ230U
+                      - checkbox [ref=f2e2760]
+                      - text: USB 1.1
+              - group [ref=f2e2762]:
+                - heading "Customer Reviews" [level=2] [ref=f2e2763]
+                - list "Customer Reviews" [ref=f2e2764]:
+                  - listitem [ref=f2e2765]:
+                    - link "Apply the filter 4 Stars & Up to narrow results" [ref=f2e2768] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_72%3A1318476031&dc&qid=1790681155&rnid=1318475031&ref=sr_nr_p_72_1&ds=v1%3AKey7T70P%2BmJuZI4tZh1PA9gWhM6ZiBtP9Bvs17G5Gvo
+                      - generic [ref=f2e2769]: 4 Stars
+                      - text: "& Up"
+              - group [ref=f2e2771]:
+                - heading "USB Type" [level=2] [ref=f2e2772]
+                - list "USB Type" [ref=f2e2773]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2774]:
+                    - link "Apply the filter USB 2.0 to narrow results" [ref=f2e2776] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_feature_two_browse-bin%3A7005107031&dc&qid=1790681155&rnid=7005106031&ref=sr_nr_p_n_feature_two_browse-bin_1&ds=v1%3A6oMcXR0PHyagjIbCNP%2FfRtxU0AHJey%2BGFlYNKLsf26A
+                      - checkbox [ref=f2e2779]
+                      - text: USB 2.0
+                  - listitem "Popular Shopping Ideas" [ref=f2e2781]:
+                    - link "Apply the filter USB 3.0 to narrow results" [ref=f2e2783] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_feature_two_browse-bin%3A7005108031&dc&qid=1790681155&rnid=7005106031&ref=sr_nr_p_n_feature_two_browse-bin_2&ds=v1%3AfmJBBtE7rY4m72Jl8bC9R%2BczAPho7qZk0JxhJNteCZg
+                      - checkbox [ref=f2e2786]
+                      - text: USB 3.0
+              - group [ref=f2e2788]:
+                - generic [ref=f2e2789]:
+                  - generic [ref=f2e2790]: Price
+                  - generic [ref=f2e2793]:
+                    - generic [ref=f2e2794]:
+                      - generic [ref=f2e2795]: ₹265
+                      - generic [ref=f2e2796]: –
+                      - generic [ref=f2e2797]: ₹99,600+
+                    - generic [ref=f2e2800]:
+                      - generic:
+                        - slider "Minimum price": "0"
+                      - generic [ref=f2e2801]:
+                        - slider "Maximum price": "188"
+                - list [ref=f2e2802]:
+                  - listitem [ref=f2e2803]:
+                    - link "Up to ₹1,000" [ref=f2e2805] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_36%3A-100000&dc&qid=1790681155&rnid=1318502031&ref=sr_nr_p_36_1&ds=v1%3AgoVedPOJPZyF1pv74CiGdBW1bTjhekAWB3nNpAsyw8Y
+                  - listitem [ref=f2e2806]:
+                    - link "₹1,000 - ₹1,800" [ref=f2e2808] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_36%3A100000-180000&dc&qid=1790681155&rnid=1318502031&ref=sr_nr_p_36_2&ds=v1%3ANol%2FiQs53pZMQb0u5fGU8aLIO3T65Yl8UtKSkP926xo
+                  - listitem [ref=f2e2809]:
+                    - link "₹1,800 - ₹2,400" [ref=f2e2811] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_36%3A180000-240000&dc&qid=1790681155&rnid=1318502031&ref=sr_nr_p_36_3&ds=v1%3A7XIBeJxOk1FdGZHRg3ZbCbWHdZ7qE6GZa4jtRM4lBkE
+                  - listitem [ref=f2e2812]:
+                    - link "₹2,400 - ₹3,500" [ref=f2e2814] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_36%3A240000-350000&dc&qid=1790681155&rnid=1318502031&ref=sr_nr_p_36_4&ds=v1%3ATCVGVXWP3jwfBq%2FHKRymx2e1xOQqHi3m5uDIpNLC6LI
+                  - listitem [ref=f2e2815]:
+                    - link "Over ₹3,500" [ref=f2e2817] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_36%3A350000-&dc&qid=1790681155&rnid=1318502031&ref=sr_nr_p_36_5&ds=v1%3AOADFOfIDh9MgL1rWkU8d3gWkP9QNKXd7NfTIRRYCy6A
+                - heading "Deals & Discounts" [level=2] [ref=f2e2818]
+                - list "Deals & Discounts" [ref=f2e2819]:
+                  - listitem [ref=f2e2820]:
+                    - link "All Discounts" [ref=f2e2822] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_deal_type%3A26921226031&dc&qid=1790681155&rnid=26921223031&ref=sr_nr_p_n_deal_type_1&ds=v1%3AS0E63ulY4626G9Zs0AHrYtn%2FAXSncJMBJ8xJH6N5Atc
+                  - listitem [ref=f2e2823]:
+                    - link "Buy More, Save More" [ref=f2e2825] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_deal_type%3A210770213031&dc&qid=1790681155&rnid=26921223031&ref=sr_nr_p_n_deal_type_2&ds=v1%3AFpSKkNK75F%2BA%2FXZ8x6zH%2B2FtXRT%2FAKMLLf6H8pyuhy4
+                  - listitem [ref=f2e2826]:
+                    - link "Coupons" [ref=f2e2828] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_deal_type%3A210770212031&dc&qid=1790681155&rnid=26921223031&ref=sr_nr_p_n_deal_type_3&ds=v1%3ACryN8iWj%2Bho5z6EnW9EfaHG2XjMd6pyhDWMSMmlzjnI
+                  - listitem [ref=f2e2829]:
+                    - link "Today's Deals" [ref=f2e2831] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_deal_type%3A26921224031&dc&qid=1790681155&rnid=26921223031&ref=sr_nr_p_n_deal_type_4&ds=v1%3AEU%2B6cVS8qIhiRXbEgIUvrxtXE0IXxF%2B4EF3vkJkajIs
+              - group [ref=f2e2832]:
+                - heading "Discount" [level=2] [ref=f2e2833]
+                - list "Discount" [ref=f2e2834]:
+                  - listitem [ref=f2e2835]:
+                    - link "10% Off or more" [ref=f2e2837] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A2665399031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_1&ds=v1%3A9luVDRjQ09JOWgaLEg7CbWAr1TsD1LYjz%2F2%2BF2%2Bvfpw
+                  - listitem [ref=f2e2838]:
+                    - link "25% Off or more" [ref=f2e2840] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A2665400031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_2&ds=v1%3AlmysaLSV1jecvjR5zfiWLgm0eeMrCB%2BiI4FD7YvlUb0
+                  - listitem [ref=f2e2841]:
+                    - link "35% Off or more" [ref=f2e2843] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A2665402031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_3&ds=v1%3AQIKkFpVKwITfLxMmcf%2Be1JejsCI1%2Bmn8UTKJzSz3WRs
+                  - listitem [ref=f2e2844]:
+                    - link "50% Off or more" [ref=f2e2846] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A2665401031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_4&ds=v1%3AZ2C2cPEG5x8oq0PJj36J3IrKqAW%2BWHXeKAI7UhbpXpw
+                  - listitem [ref=f2e2847]:
+                    - link "60% Off or more" [ref=f2e2849] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A27060456031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_5&ds=v1%3Anv6R1wGTRwJRwy9s4FDcWeCd7yKnD90B4OU5U3d54vQ
+                  - listitem [ref=f2e2850]:
+                    - link "70% Off or more" [ref=f2e2852] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_pct-off-with-tax%3A27060457031&dc&qid=1790681155&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_6&ds=v1%3AtTn%2BixrH2LOqq5AriiSzKAusHGkI81bbSEATK4D54sA
+              - group [ref=f2e2853]:
+                - heading "Features" [level=2] [ref=f2e2854]
+                - list "Features" [ref=f2e2855]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2856]:
+                    - link "Apply the filter Lightweight to narrow results" [ref=f2e2858] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003296039111%3A96301811031&dc&qid=1790681155&rnid=28237990031&ref=sr_nr_p_n_g-1003296039111_1&ds=v1%3AJUiTBOSe4tXg1q9wlt7cOa4FmJ69zb%2BOqA2gtrHRcsE
+                      - checkbox [ref=f2e2861]
+                      - text: Lightweight
+                  - listitem "Popular Shopping Ideas" [ref=f2e2863]:
+                    - link "Apply the filter Dust Proof to narrow results" [ref=f2e2865] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003296039111%3A78240836031&dc&qid=1790681155&rnid=28237990031&ref=sr_nr_p_n_g-1003296039111_2&ds=v1%3AlVO3UYCDaXrESVVET4NN1rFq6jwTnQukrhxyuCWrNTs
+                      - checkbox [ref=f2e2868]
+                      - text: Dust Proof
+                  - listitem "Popular Shopping Ideas" [ref=f2e2870]:
+                    - link "Apply the filter Magnetic Proof to narrow results" [ref=f2e2872] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003296039111%3A28237993031&dc&qid=1790681155&rnid=28237990031&ref=sr_nr_p_n_g-1003296039111_3&ds=v1%3AD8C0iVJZ120XgBmyWTB%2BgOSLlDj7OQdhb%2FWj8WyOCCk
+                      - checkbox [ref=f2e2875]
+                      - text: Magnetic Proof
+                  - listitem "Popular Shopping Ideas" [ref=f2e2877]:
+                    - link "Apply the filter Temperature Proof to narrow results" [ref=f2e2879] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003296039111%3A28237991031&dc&qid=1790681155&rnid=28237990031&ref=sr_nr_p_n_g-1003296039111_4&ds=v1%3AhMr%2BeS9ePgRyNgA2iE294M6P0f0VdejZqkaXVmZ0tn0
+                      - checkbox [ref=f2e2882]
+                      - text: Temperature Proof
+                  - listitem "Popular Shopping Ideas" [ref=f2e2884]:
+                    - link "Apply the filter Water Proof to narrow results" [ref=f2e2886] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003296039111%3A28237992031&dc&qid=1790681155&rnid=28237990031&ref=sr_nr_p_n_g-1003296039111_5&ds=v1%3A8OO10FpEZWudWxYlx6Cz%2BtIyzWfuOTWs7DRsvkBLmvI
+                      - checkbox [ref=f2e2889]
+                      - text: Water Proof
+              - group [ref=f2e2891]:
+                - heading "Pay On Delivery" [level=2] [ref=f2e2892]
+                - list "Pay On Delivery" [ref=f2e2893]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2894]:
+                    - link "Apply the filter Eligible for Pay On Delivery to narrow results" [ref=f2e2896] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_is_cod_eligible%3A4931671031&dc&qid=1790681155&rnid=4931670031&ref=sr_nr_p_n_is_cod_eligible_1&ds=v1%3A5B5h8Lb9CKqd66ysLiptB2F4pduaXjkRMS%2BeCkeQvOo
+                      - checkbox [ref=f2e2899]
+                      - text: Eligible for Pay On Delivery
+              - group [ref=f2e2901]:
+                - heading "New Arrivals" [level=2] [ref=f2e2902]
+                - list "New Arrivals" [ref=f2e2903]:
+                  - listitem [ref=f2e2904]:
+                    - link "Last 30 days" [ref=f2e2906] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_date_first_available_absolute%3A1318487031&dc&qid=1790681155&rnid=1318486031&ref=sr_nr_p_n_date_first_available_absolute_1&ds=v1%3AEYmEXu713AKA5%2BgaYULH6nP0c8BQw3gSWsc3ITzf72g
+                  - listitem [ref=f2e2907]:
+                    - link "Last 90 days" [ref=f2e2909] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_date_first_available_absolute%3A1318488031&dc&qid=1790681155&rnid=1318486031&ref=sr_nr_p_n_date_first_available_absolute_2&ds=v1%3AQTnN2w04EvoJBKCPjV5WSGGUMbQsyB7Yq0GSnc%2B9qjE
+              - group [ref=f2e2910]:
+                - heading "Top Brands" [level=2] [ref=f2e2911]
+                - list "Top Brands" [ref=f2e2912]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2913]:
+                    - link "Apply the filter Top Brands to narrow results" [ref=f2e2915] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101014971069111%3A206270883031&dc&qid=1790681155&rnid=206270882031&ref=sr_nr_p_n_g-101014971069111_1&ds=v1%3AvYqB0mpUcJ58UP7MWTtu%2FFwN980SCt9iJhFYtfFg%2B9I
+                      - checkbox [ref=f2e2918]
+                      - text: Top Brands
+              - group [ref=f2e2920]:
+                - heading "Country of Origin" [level=2] [ref=f2e2921]
+                - list "Country of Origin" [ref=f2e2922]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2923]:
+                    - link "Apply the filter India to narrow results" [ref=f2e2925] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_country_of_origin-bin%3AIN&dc&qid=1790681155&rnid=215263484031&ref=sr_nr_p_country_of_origin-bin_1&ds=v1%3AuOPw9dqQmBfFIVQkW%2BC8qyTqOEtD4TBMjfJYi6qUmGI
+                      - checkbox [ref=f2e2928]
+                      - text: India
+                  - listitem "Popular Shopping Ideas" [ref=f2e2930]:
+                    - link "Apply the filter China to narrow results" [ref=f2e2932] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_country_of_origin-bin%3ACN&dc&qid=1790681155&rnid=215263484031&ref=sr_nr_p_country_of_origin-bin_2&ds=v1%3AMRJrCah%2BYdRJqYvT5Sg7Yk7LzES2Kw8TFwBGHMoYGZU
+                      - checkbox [ref=f2e2935]
+                      - text: China
+                  - listitem "Popular Shopping Ideas" [ref=f2e2937]:
+                    - link "Apply the filter United States to narrow results" [ref=f2e2939] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_country_of_origin-bin%3AUS&dc&qid=1790681155&rnid=215263484031&ref=sr_nr_p_country_of_origin-bin_3&ds=v1%3A0Izntfjdd7ik4n9FPttgjLdkTzoVVCfXHo5VlAYgcpE
+                      - checkbox [ref=f2e2942]
+                      - text: United States
+                  - listitem "Popular Shopping Ideas" [ref=f2e2944]:
+                    - link "Apply the filter Hong Kong to narrow results" [ref=f2e2946] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_country_of_origin-bin%3AHK&dc&qid=1790681155&rnid=215263484031&ref=sr_nr_p_country_of_origin-bin_4&ds=v1%3A0WsqeWjFlf%2BRXnL9UPy%2BkjrZLZGs5ZYRxg7INQRFuLg
+                      - checkbox [ref=f2e2949]
+                      - text: Hong Kong
+                  - listitem "Popular Shopping Ideas" [ref=f2e2951]:
+                    - link "Apply the filter Malaysia to narrow results" [ref=f2e2953] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_country_of_origin-bin%3AMY&dc&qid=1790681155&rnid=215263484031&ref=sr_nr_p_country_of_origin-bin_5&ds=v1%3AK%2F%2F%2FTa1fJ2u%2BbCMzJMJdb0xvs19wRIsMRB4HyblWCG4
+                      - checkbox [ref=f2e2956]
+                      - text: Malaysia
+                  - listitem [ref=f2e2958]:
+                    - button "See more, Country of Origin" [ref=f2e2961] [cursor=pointer]: See more
+              - group [ref=f2e2963]:
+                - heading "Availability" [level=2] [ref=f2e2964]
+                - list "Availability" [ref=f2e2965]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2966]:
+                    - link "Apply the filter Include Out of Stock to narrow results" [ref=f2e2968] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_availability%3A1318485031&dc&qid=1790681155&rnid=1318483031&ref=sr_nr_p_n_availability_2&ds=v1%3ALrMf7%2FhINM9c%2Fj99Lx%2BTcVzjOa6AW6HU%2FjxWqxdNtCs
+                      - checkbox [ref=f2e2971]
+                      - text: Include Out of Stock
+              - group [ref=f2e2973]:
+                - heading "Seller" [level=2] [ref=f2e2974]
+                - list "Seller" [ref=f2e2975]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2976]:
+                    - link "Apply the filter WORLD METRO ENTERTAINMENT to narrow results" [ref=f2e2978] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_6%3AA16RQAMFLKZQVV&dc&qid=1790681155&rnid=1318474031&ref=sr_nr_p_6_1&ds=v1%3A4LsOTDsmN1Jhvpf7SgradqxQ7v3fmidg5%2Fqlrxfks%2BQ
+                      - checkbox [ref=f2e2981]
+                      - text: WORLD METRO ENTERTAINMENT
+                  - listitem "Popular Shopping Ideas" [ref=f2e2983]:
+                    - link "Apply the filter ENTERPRISES ARIHANT to narrow results" [ref=f2e2985] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_6%3AA3VRWSEF4PQRIN&dc&qid=1790681155&rnid=1318474031&ref=sr_nr_p_6_2&ds=v1%3APMHxq32JoHqsIpObghe14IfuE0e2kch6juAG4QpLH%2BY
+                      - checkbox [ref=f2e2988]
+                      - text: ENTERPRISES ARIHANT
+                  - listitem [ref=f2e2990]:
+                    - button "See more, Seller" [ref=f2e2993] [cursor=pointer]: See more
+              - group [ref=f2e2995]:
+                - heading "Made for Amazon Brands" [level=2] [ref=f2e2996]
+                - list "Made for Amazon Brands" [ref=f2e2997]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e2998]:
+                    - link "Apply the filter Made for Amazon to narrow results" [ref=f2e3000] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_is_private_label%3A16184648031&dc&qid=1790681155&rnid=16184647031&ref=sr_nr_p_n_is_private_label_1&ds=v1%3AghCUJvtbrDtUlCSFEut%2BO%2B3Q5ZZ%2B8iux8ANEeC2K1yw
+                      - checkbox [ref=f2e3003]
+                      - text: Made for Amazon
+              - group [ref=f2e3005]:
+                - heading "Read Speed" [level=2] [ref=f2e3006]
+                - list "Read Speed" [ref=f2e3007]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e3008]:
+                    - link "Apply the filter Up to 84 MB/s to narrow results" [ref=f2e3010] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101016877920111%3A211000562031&dc&qid=1790681155&rnid=211000558031&ref=sr_nr_p_n_g-101016877920111_1&ds=v1%3AQvf7b6A5Zh0Z4Mn%2FXzn54xOQeYBvoxcAliuEqBFMGYo
+                      - checkbox [ref=f2e3013]
+                      - text: Up to 84 MB/s
+                  - listitem "Popular Shopping Ideas" [ref=f2e3015]:
+                    - link "Apply the filter Up to 79 MB/s to narrow results" [ref=f2e3017] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101016877920111%3A211000563031&dc&qid=1790681155&rnid=211000558031&ref=sr_nr_p_n_g-101016877920111_2&ds=v1%3AbkzzAp7EHVAYDvYfeClQ7lT4zv3IwASMztyHaYb%2BQC4
+                      - checkbox [ref=f2e3020]
+                      - text: Up to 79 MB/s
+                  - listitem "Popular Shopping Ideas" [ref=f2e3022]:
+                    - link "Apply the filter 80 to 89 MB/s to narrow results" [ref=f2e3024] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101016877920111%3A211000561031&dc&qid=1790681155&rnid=211000558031&ref=sr_nr_p_n_g-101016877920111_3&ds=v1%3AAImb4vav2rknYkFKRIaac1zRxuAYkZRFXkqeuDbR6o8
+                      - checkbox [ref=f2e3027]
+                      - text: 80 to 89 MB/s
+                  - listitem "Popular Shopping Ideas" [ref=f2e3029]:
+                    - link "Apply the filter 90 to 99 MB/s to narrow results" [ref=f2e3031] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101016877920111%3A211000564031&dc&qid=1790681155&rnid=211000558031&ref=sr_nr_p_n_g-101016877920111_4&ds=v1%3AQgSEAmSOzNK0TMPODZuY8i5VaBgP3s6dW5GeRmZbhzQ
+                      - checkbox [ref=f2e3034]
+                      - text: 90 to 99 MB/s
+                  - listitem "Popular Shopping Ideas" [ref=f2e3036]:
+                    - link "Apply the filter 100 MB/s & above to narrow results" [ref=f2e3038] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101016877920111%3A211000560031&dc&qid=1790681155&rnid=211000558031&ref=sr_nr_p_n_g-101016877920111_5&ds=v1%3Arzr38yPlJfzoDa5OqBsCa7RlUfFFqWWPS7rebQfCenQ
+                      - checkbox [ref=f2e3041]
+                      - text: 100 MB/s & above
+              - group [ref=f2e3043]:
+                - heading "Memory Type" [level=2] [ref=f2e3044]
+                - list "Memory Type" [ref=f2e3045]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e3046]:
+                    - link "Apply the filter CFast to narrow results" [ref=f2e3048] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213171031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_1&ds=v1%3AqaZCyoeLjau8JLMv5LsU0OEGLOLLpUJjCUUEd9IwG%2F4
+                      - checkbox [ref=f2e3051]
+                      - text: CFast
+                  - listitem "Popular Shopping Ideas" [ref=f2e3053]:
+                    - link "Apply the filter CompactFlash to narrow results" [ref=f2e3055] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213175031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_2&ds=v1%3A9sr99KlIbuZMaE%2FKCx3kvvsGSx82CWbFKrpu4iF6dk8
+                      - checkbox [ref=f2e3058]
+                      - text: CompactFlash
+                  - listitem "Popular Shopping Ideas" [ref=f2e3060]:
+                    - link "Apply the filter Memory Stick Duo to narrow results" [ref=f2e3062] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213184031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_3&ds=v1%3A1nzAkTVlgSRnhdOfOAtEsVdYqQLS0r2Ijfprp2zYwy4
+                      - checkbox [ref=f2e3065]
+                      - text: Memory Stick Duo
+                  - listitem "Popular Shopping Ideas" [ref=f2e3067]:
+                    - link "Apply the filter Memory Stick PRO Duo to narrow results" [ref=f2e3069] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213183031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_4&ds=v1%3AD97s4D93jghmpPwLdPTQWolbiy2KK5KGfPZOafKCl7Y
+                      - checkbox [ref=f2e3072]
+                      - text: Memory Stick PRO Duo
+                  - listitem "Popular Shopping Ideas" [ref=f2e3074]:
+                    - link "Apply the filter Mini SD to narrow results" [ref=f2e3076] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213169031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_5&ds=v1%3Apz5QV20ceMdY7mPmLxklbl2icPfa%2BwtESBtdIpHJxLI
+                      - checkbox [ref=f2e3079]
+                      - text: Mini SD
+                  - listitem "Popular Shopping Ideas" [ref=f2e3081]:
+                    - link "Apply the filter MMC to narrow results" [ref=f2e3083] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213176031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_6&ds=v1%3AIqSpnyiKM78o8LGqUd3n8Bq6jDmcA%2BS6V3KZ4YCWisA
+                      - checkbox [ref=f2e3086]
+                      - text: MMC
+                  - listitem "Popular Shopping Ideas" [ref=f2e3088]:
+                    - link "Apply the filter SD to narrow results" [ref=f2e3090] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-1003290936111%3A28213173031&dc&qid=1790681155&rnid=28213124031&ref=sr_nr_p_n_g-1003290936111_7&ds=v1%3A%2FUe7Stp88xgVnX%2F76%2BK5FwnoHDWHExM0IHi3%2BtlJ8GA
+                      - checkbox [ref=f2e3093]
+                      - text: SD
+                  - listitem [ref=f2e3095]:
+                    - button "See more, Memory Type" [ref=f2e3098] [cursor=pointer]: See more
+              - group [ref=f2e3100]:
+                - heading "Speed" [level=2] [ref=f2e3101]
+                - list "Speed" [ref=f2e3102]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e3103]:
+                    - link "Apply the filter Class 6 to narrow results" [ref=f2e3105] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_feature_nine_browse-bin%3A7014431031&dc&qid=1790681155&rnid=7014427031&ref=sr_nr_p_n_feature_nine_browse-bin_1&ds=v1%3ArKPiqfAtTUEJvMqOKVLZUHeNMhVq6XEinCr7PkLVrZ8
+                      - checkbox [ref=f2e3108]
+                      - text: Class 6
+                  - listitem "Popular Shopping Ideas" [ref=f2e3110]:
+                    - link "Apply the filter Class 10 to narrow results" [ref=f2e3112] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_feature_nine_browse-bin%3A7014428031&dc&qid=1790681155&rnid=7014427031&ref=sr_nr_p_n_feature_nine_browse-bin_2&ds=v1%3AIUYQs%2FVs672X7oX9DIK7Qt%2F958PPFl4HszIlobtXHB4
+                      - checkbox [ref=f2e3115]
+                      - text: Class 10
+              - group [ref=f2e3117]:
+                - heading "Flash Memory Video Speed Class" [level=2] [ref=f2e3118]
+                - list "Flash Memory Video Speed Class" [ref=f2e3119]:
+                  - listitem "Popular Shopping Ideas" [ref=f2e3120]:
+                    - link "Apply the filter V30 to narrow results" [ref=f2e3122] [cursor=pointer]:
+                      - /url: /s?k=Pen+Drive&rh=p_n_g-101017772517111%3A218773669031&dc&qid=1790681155&rnid=218773661031&ref=sr_nr_p_n_g-101017772517111_1&ds=v1%3AsQXEH1mZT0klWWIl5Qnrv6i7UEZAPwngkTLQGy3Xmzg
+                      - checkbox [ref=f2e3125]
+                      - text: V30
+            - generic [ref=f2e3130]:
+              - iframe [ref=f2e3131]:
+                - generic [ref=f4e4]:
+                  - generic [ref=f4e5]:
+                    - link "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [ref=f4e6] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDQ1NTYzMTgzNjMzMjo6Ojo&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_left_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=4If3zYQru4&sp_cr=ZAZ
+                    - img "SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, Upto 400MB/s, Pendrive, Black, 5Y Warranty (SDDDC3-128G-I46PD)" [ref=f4e10]
+                    - generic [ref=f4e12]:
+                      - generic [ref=f4e13]: SANDISK Ultra Dual Drive Go Type-C 128GB, OTG, ...
+                      - link "5,561" [ref=f4e15] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDQ1NTYzMTgzNjMzMjo6Ojo&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_left_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=4If3zYQru4&sp_cr=ZAZ#customerReviews
+                      - generic [ref=f4e17]: ₹2,069.00
+                    - link "Shop now" [ref=f4e22] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDQ1NTYzMTgzNjMzMjo6Ojo&url=%2Fdp%2FB0DNFSSF3F%2Fref%3Dsspa_dk_left_sx_aax_0%3Fpsc%3D1%26aref%3D4If3zYQru4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=4If3zYQru4&sp_cr=ZAZ
+                  - separator [ref=f4e24]
+                  - generic [ref=f4e25]:
+                    - link "Samsung PRO Endurance 128GB MicroSDXC Memory Card with Adapter for Dash Cam, Body Cam, and Security Camera – Class 10, U3, V30 (‎MB-MJ128KA/APC)" [ref=f4e26] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDk5NDc1MzYwMzEzMjo6Ojo&url=%2Fdp%2FB0B9R267MD%2Fref%3Dsspa_dk_left_sx_aax_1%3Fpsc%3D1%26aref%3Da4DrzIF9g3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=a4DrzIF9g3&sp_cr=ZAZ
+                    - img "Samsung PRO Endurance 128GB MicroSDXC Memory Card with Adapter for Dash Cam, Body Cam, and Security Camera – Class 10, U3, V30 (‎MB-MJ128KA/APC)" [ref=f4e30]
+                    - generic [ref=f4e32]:
+                      - generic [ref=f4e33]: Samsung PRO Endurance 128GB MicroSDXC Memory Ca...
+                      - link "191" [ref=f4e35] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDk5NDc1MzYwMzEzMjo6Ojo&url=%2Fdp%2FB0B9R267MD%2Fref%3Dsspa_dk_left_sx_aax_1%3Fpsc%3D1%26aref%3Da4DrzIF9g3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=a4DrzIF9g3&sp_cr=ZAZ#customerReviews
+                      - generic [ref=f4e37]: ₹7,148.00
+                    - link "Shop now" [ref=f4e42] [cursor=pointer]:
+                      - /url: https://aax-eu-zaz.amazon.in/x/c/RKKkkvgsj4fQIpEljw0yM0EAAAGg7OoIgQoAAAH_AUFvbm9fdHhuX2JpZDIgICBvbm9fdHhuX2ltcDIgICC7yGMF/clv1c_ek8OM3GX57OOBXc7_aNgvSAuSoIFY7M_wm3Jyr2ICZRzsUnW6DFAMqHYAHc_-T9X--edcCDxWeucYod1TAGYM0Ly2og4xGwOejDzgLDA4tLIWs-KgNaf8GSfuR6W8pn39ii44Y1LIl-AihlFX2DgfciySgxxZoT5EQBwhkOX5849Uam1UGpbWFDBse2bsd7YgIEu866vCl2hwA3l3yFb5Y-Nx0cn7SXfz5vcsVPkqoJSOKWp0f6dOoVWeo7GRdbLiP6j-nJCzGnvqjCX8EQ9s1V1Lyuc_-bxuXLqGdpsnmdH1CQYrYHB2LI3m2-jATDEh1E_TU0mkjH9s7l1X0xpo3C0kVAv5Yj_7wWla23QroQhmxQXRSGx0whkX3XFiw473s_zmnzIYLMOvg/https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo2NjI0MDEzMjcwOTQ1MjM4OjE3OTA2ODExNTU6c3Bfc2VhcmNoX2xlZnRfc2hhcmVkOjMwMDk5NDc1MzYwMzEzMjo6Ojo&url=%2Fdp%2FB0B9R267MD%2Fref%3Dsspa_dk_left_sx_aax_1%3Fpsc%3D1%26aref%3Da4DrzIF9g3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9zZWFyY2hfbGVmdF9zaGFyZWQ&aref=a4DrzIF9g3&sp_cr=ZAZ
+              - button "Leave feedback on Sponsored advertisement" [ref=f2e3133] [cursor=pointer]:
+                - generic [ref=f2e3134]: Sponsored
+            - generic [ref=f2e3139]:
+              - iframe [ref=f2e3140]:
+                - region "Sponsored ad from EVM" [ref=f5e3]:
+                  - link "EVM EVM EnStore 8GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/8GB) EnStore 8GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/8GB) 4.1 out of 5 stars., 3,534 customer reviews. ₹399.00 List price was ₹1,199.00" [ref=f5e4] [cursor=pointer]:
+                    - generic [ref=f5e5]:
+                      - img "EVM" [ref=f5e12]
+                      - img "EVM EnStore 8GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/8GB)" [ref=f5e20]
+                      - generic [ref=f5e21]:
+                        - generic [ref=f5e22]: EnStore 8GB USB 2.0 Durable Metal Flash Drive | Dependable 15MB/s Read|Rugged Metal Body | Seamless Plug & Play | Laptop Desktop Car Stereo Set-Top Box | 10 Years Warranty (EVMPD/8GB)
+                        - generic [ref=f5e24]:
+                          - img "4.1 out of 5 stars., 3,534 customer reviews." [ref=f5e27]:
+                            - generic [ref=f5e28]: "4.1"
+                            - generic [ref=f5e54]: 3,534
+                          - generic [ref=f5e58]:
+                            - generic [ref=f5e59]: ₹399.00
+                            - generic [ref=f5e60]:
+                              - generic [ref=f5e61]: ₹
+                              - generic [ref=f5e62]: "399"
+                              - generic [ref=f5e63]: "00"
+                            - generic [ref=f5e64]:
+                              - generic [ref=f5e65]: List price was ₹1,199.00
+                              - generic [ref=f5e66]: ₹1,199.00
+              - button "Leave feedback on Sponsored advertisement" [ref=f2e3142] [cursor=pointer]:
+                - generic [ref=f2e3143]: Sponsored
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=f2e3145]:
+    - button "Back to top" [ref=f2e3146] [cursor=pointer]
+    - generic [ref=f2e3148]:
+      - generic [ref=f2e3149]:
+        - heading "Get to Know Us" [level=6] [ref=f2e3150]
+        - list [ref=f2e3151]:
+          - listitem [ref=f2e3152]:
+            - link "About Amazon" [ref=f2e3153] [cursor=pointer]:
+              - /url: https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=f2e3154]:
+            - link "Careers" [ref=f2e3155] [cursor=pointer]:
+              - /url: https://amazon.jobs
+          - listitem [ref=f2e3156]:
+            - link "Press Releases" [ref=f2e3157] [cursor=pointer]:
+              - /url: https://press.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=f2e3158]:
+            - link "Amazon Science" [ref=f2e3159] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=f2e3161]:
+        - heading "Connect with Us" [level=6] [ref=f2e3162]
+        - list [ref=f2e3163]:
+          - listitem [ref=f2e3164]:
+            - link "Facebook" [ref=f2e3165] [cursor=pointer]:
+              - /url: https://www.facebook.com/AmazonIN
+          - listitem [ref=f2e3166]:
+            - link "Twitter" [ref=f2e3167] [cursor=pointer]:
+              - /url: https://x.com/AmazonIN
+          - listitem [ref=f2e3168]:
+            - link "Instagram" [ref=f2e3169] [cursor=pointer]:
+              - /url: https://www.instagram.com/amazondotin
+      - generic [ref=f2e3171]:
+        - heading "Make Money with Us" [level=6] [ref=f2e3172]
+        - list [ref=f2e3173]:
+          - listitem [ref=f2e3174]:
+            - link "Sell on Amazon" [ref=f2e3175] [cursor=pointer]:
+              - /url: /b/?node=2838698031&ld=AZINSOANavDesktopFooter_C&ref_=nav_footer_sell_C
+          - listitem [ref=f2e3176]:
+            - link "Sell under Amazon Accelerator" [ref=f2e3177] [cursor=pointer]:
+              - /url: https://accelerator.amazon.in/?ref_=map_1_b2b_GW_FT
+          - listitem [ref=f2e3178]:
+            - link "Protect and Build Your Brand" [ref=f2e3179] [cursor=pointer]:
+              - /url: https://brandservices.amazon.in/?ref=AOINABRLGNRFOOT&ld=AOINABRLGNRFOOT
+          - listitem [ref=f2e3180]:
+            - link "Amazon Global Selling" [ref=f2e3181] [cursor=pointer]:
+              - /url: https://sell.amazon.in/grow-your-business/amazon-global-selling.html?ld=AZIN_Footer_V1&ref=AZIN_Footer_V1
+          - listitem [ref=f2e3182]:
+            - link "Supply to Amazon" [ref=f2e3183] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=en-IN
+          - listitem [ref=f2e3184]:
+            - link "Become an Affiliate" [ref=f2e3185] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&utm_medium=footer&utm_source=GW&ref_=footer_assoc
+          - listitem [ref=f2e3186]:
+            - link "Fulfilment by Amazon" [ref=f2e3187] [cursor=pointer]:
+              - /url: https://services.amazon.in/services/fulfilment-by-amazon/benefits.html/ref=az_footer_fba?ld=AWRGINFBAfooter
+          - listitem [ref=f2e3188]:
+            - link "Advertise Your Products" [ref=f2e3189] [cursor=pointer]:
+              - /url: https://advertising.amazon.in/?ref=Amz.in
+          - listitem [ref=f2e3190]:
+            - link "Amazon Pay on Merchants" [ref=f2e3191] [cursor=pointer]:
+              - /url: https://www.amazonpay.in/merchant
+      - generic [ref=f2e3193]:
+        - heading "Let Us Help You" [level=6] [ref=f2e3194]
+        - list [ref=f2e3195]:
+          - listitem [ref=f2e3196]:
+            - link "Your Account" [ref=f2e3197] [cursor=pointer]:
+              - /url: /gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=f2e3198]:
+            - link "Returns Centre" [ref=f2e3199] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=f2e3200]:
+            - link "Recalls and Product Safety Alerts" [ref=f2e3201] [cursor=pointer]:
+              - /url: https://www.amazon.in/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=f2e3202]:
+            - link "100% Purchase Protection" [ref=f2e3203] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201083470&ref_=footer_swc
+          - listitem [ref=f2e3204]:
+            - link "Amazon App Download" [ref=f2e3205] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6967393031&ref_=footer_mobapp
+          - listitem [ref=f2e3206]:
+            - link "Help" [ref=f2e3207] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he
+    - generic [ref=f2e3209]:
+      - link "Amazon India Home" [ref=f2e3212] [cursor=pointer]:
+        - /url: /ref=footer_logo
+      - generic [ref=f2e3215]:
+        - generic [ref=f2e3216]:
+          - link "Choose a language for shopping. Current selection is English." [ref=f2e3217] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=f2e3219]: English
+          - button "Expand to Change Language or Country" [ref=f2e3220] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is India." [ref=f2e3221] [cursor=pointer]:
+          - generic [ref=f2e3223]: India
+    - generic "More on Amazon" [ref=f2e3224]:
+      - generic "More on Amazon" [ref=f2e3225]:
+        - list [ref=f2e3226]:
+          - listitem [ref=f2e3227]:
+            - link [ref=f2e3228] [cursor=pointer]:
+              - /url: https://www.abebooks.com/
+              - heading "AbeBooks" [level=5] [ref=f2e3229]
+              - generic [ref=f2e3230]: Books, art& collectibles
+          - listitem [ref=f2e3231]
+          - listitem [ref=f2e3232]:
+            - link [ref=f2e3233] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=IN_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=f2e3234]
+              - generic [ref=f2e3235]: Scalable CloudComputing Services
+          - listitem [ref=f2e3236]
+          - listitem [ref=f2e3237]:
+            - link [ref=f2e3238] [cursor=pointer]:
+              - /url: https://www.audible.in/
+              - heading "Audible" [level=5] [ref=f2e3239]
+              - generic [ref=f2e3240]: DownloadAudio Books
+          - listitem [ref=f2e3241]
+          - listitem [ref=f2e3242]:
+            - link [ref=f2e3243] [cursor=pointer]:
+              - /url: https://www.imdb.com/
+              - heading "IMDb" [level=5] [ref=f2e3244]
+              - generic [ref=f2e3245]: Movies, TV& Celebrities
+        - list [ref=f2e3246]:
+          - listitem [ref=f2e3247]:
+            - link [ref=f2e3248] [cursor=pointer]:
+              - /url: https://www.shopbop.com/
+              - heading "Shopbop" [level=5] [ref=f2e3249]
+              - generic [ref=f2e3250]: DesignerFashion Brands
+          - listitem [ref=f2e3251]
+          - listitem [ref=f2e3252]:
+            - link [ref=f2e3253] [cursor=pointer]:
+              - /url: /business?ref=footer_aingw
+              - heading "Amazon Business" [level=5] [ref=f2e3254]
+              - generic [ref=f2e3255]: Everything ForYour Business
+          - listitem [ref=f2e3256]
+          - listitem [ref=f2e3257]:
+            - link "Amazon Music Stream millions of songs" [ref=f2e3258] [cursor=pointer]:
+              - /url: /music/player?ref=footer_apm
+              - heading "Amazon Music" [level=5] [ref=f2e3259]
+              - generic [ref=f2e3260]: Stream millions of songs
+          - listitem [ref=f2e3261]
+          - listitem [ref=f2e3262]
+    - generic [ref=f2e3263]:
+      - list [ref=f2e3264]:
+        - listitem [ref=f2e3265]:
+          - link "Conditions of Use & Sale" [ref=f2e3266] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200545940&ref_=footer_cou
+        - listitem [ref=f2e3267]:
+          - link "Privacy Notice" [ref=f2e3268] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200534380&ref_=footer_privacy
+        - listitem [ref=f2e3269]:
+          - link "Interest-Based Ads" [ref=f2e3270] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=202075050&ref_=footer_iba
+      - generic [ref=f2e3271]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - iframe [ref=f2e3273]:
+    - iframe [ref=f7e2]:
+      
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | test.only('amazon product', async ({ page }) => {
+  4  | 
+  5  |     await page.goto("https://www.amazon.in/?&linkCode=sl2&tag=kcsgroup0a-21&linkId=f330b257f2f5391201c6168c81c9950a&language=en_IN&ref_=as_li_ss_tl");
+  6  | 
+  7  |     await page.getByPlaceholder("Search Amazon.in").pressSequentially("Pen Drive");
+  8  | 
+  9  |     await page.locator("input#nav-search-submit-button").click();
+  10 | 
+  11 |     //const products= await page.locator(".atJtCj").allTextContents();
+  12 |     // console.log(products);
+  13 | 
+  14 |    const product = page.locator("div.puisg-col-inner").filter({
+  15 |         hasText: "SanDisk Mobile Pen Drive Luxe 128GB, USB Type A & USB C Connector, Up to 400MB/s R, Silver"
+  16 |     });
+  17 | 
+> 18 |     await product.getByRole("button", { name: "Add to cart" }).click();
+     |                                                                ^ TimeoutError: locator.click: Timeout 10000ms exceeded.
+  19 |     await page.locator("#nav-cart").click();
+  20 |     console.log(await page.locator(".a-truncate-cut").textContent());
+  21 | 
+  22 |     await page.pause();
+  23 | 
+  24 | });
+  25 | 
+```
